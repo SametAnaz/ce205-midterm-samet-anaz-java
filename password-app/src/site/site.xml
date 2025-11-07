@@ -20,9 +20,9 @@
 	<version position="right" />
 
 	<bannerLeft>
-		<name>Password Application</name>
+		<name>Password Manager - CE205 Midterm</name>
 		<src>images/logo.png</src>
-		<href>https://github.com/ucoruh/eclipse-java-maven-template</href>
+		<href>https://github.com/SametAnaz/ce205-midterm-samet-anaz-java</href>
 	</bannerLeft>
 
 	<bannerRight>
@@ -35,17 +35,17 @@
 	</poweredBy>
 
 	<body>
-		<head>Password App</head>
+		<head>Password Manager Application</head>
 		<!-- Add any additional meta tags, CSS files, or JavaScript files -->
 
 		<menu name="Overview">
 				<item name="Introduction" href="index.html" />
 				<item name="README.md" href="readme.html" />
-				<item name="Overiew Markdown" href="overview.html" />
+				<item name="Overview Markdown" href="overview.html" />
 				<item name="Project Info" href="project-info.html" />
 				<item name="Project Summary" href="summary.html" />
 				<item name="Project Team" href="team.html" />
-				<item name="GitHub Repository" href="https://github.com/ucoruh/eclipse-java-maven-template" />
+				<item name="GitHub Repository" href="https://github.com/SametAnaz/ce205-midterm-samet-anaz-java" />
 		</menu>
 
 		<menu name="Development">

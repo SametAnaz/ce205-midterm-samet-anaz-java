@@ -11,11 +11,13 @@
     <packaging>jar</packaging>
 
     <name>password-app</name>
-    <url>https://github.com/SametAnaz/ce204-hw-samet-anaz-java.git</url>
-    <description>ce206-hw-anaz-samet</description>
+    <url>https://github.com/SametAnaz/ce205-midterm-samet-anaz-java</url>
+    <description>CE205 Midterm Project - Password Manager Application by Samet Anaz</description>
 
     <scm>
-        <url>https://github.com/SametAnaz/ce204-hw-samet-anaz-java.git</url>
+        <url>https://github.com/SametAnaz/ce205-midterm-samet-anaz-java</url>
+        <connection>scm:git:git://github.com/SametAnaz/ce205-midterm-samet-anaz-java.git</connection>
+        <developerConnection>scm:git:ssh://github.com:SametAnaz/ce205-midterm-samet-anaz-java.git</developerConnection>
     </scm>
 
     <inceptionYear>2025</inceptionYear>
@@ -52,42 +54,43 @@
     </organization>
 
     <issueManagement>
-        <system>Github</system>
-        <url>https://github.com/SametAnaz/ce204-hw-samet-anaz-java.git</url>
+        <system>Github Issues</system>
+        <url>https://github.com/SametAnaz/ce205-midterm-samet-anaz-java/issues</url>
     </issueManagement>
 
     <ciManagement>
-        <system>Github</system>
+        <system>Github Actions</system>
         <notifiers>
             <notifier>
-                <address>ugur.coruh@erdogan.edu.tr</address>
+                <address>samet_anaz21@erdogan.edu.tr</address>
                 <sendOnSuccess>true</sendOnSuccess>
                 <sendOnError>true</sendOnError>
                 <sendOnFailure>true</sendOnFailure>
                 <sendOnWarning>true</sendOnWarning>
             </notifier>
         </notifiers>
-        <url>https://github.com/SametAnaz/ce204-hw-samet-anaz-java.git</url>
+        <url>https://github.com/SametAnaz/ce205-midterm-samet-anaz-java/actions</url>
     </ciManagement>
 
     <repositories>
         <repository>
-            <id>eclipse-java-maven-template</id>
-            <name>eclipse-java-maven-template</name>
-            <url>https://github.com/SametAnaz/ce204-hw-samet-anaz-java.git</url>
+            <id>ce205-midterm-samet-anaz-java</id>
+            <name>CE205 Midterm Project Repository</name>
+            <url>https://github.com/SametAnaz/ce205-midterm-samet-anaz-java</url>
         </repository>
     </repositories>
 
     <distributionManagement>
         <site>
-            <name>https://github.com/SametAnaz/ce204-hw-samet-anaz-java.git</name>
-            <id>eclipse-java-maven-template</id>
+            <name>CE205 Midterm Project Site</name>
+            <id>ce205-midterm-samet-anaz-java</id>
+            <url>https://sametanaz.github.io/ce205-midterm-samet-anaz-java/</url>
         </site>
-        <downloadUrl>https://github.com/SametAnaz/ce204-hw-samet-anaz-java.git</downloadUrl>
+        <downloadUrl>https://github.com/SametAnaz/ce205-midterm-samet-anaz-java/releases</downloadUrl>
         <repository>
-            <id>eclipse-java-maven-template</id>
-            <name>eclipse-java-maven-template</name>
-            <url>https://github.com/SametAnaz/ce204-hw-samet-anaz-java.git</url>
+            <id>ce205-midterm-samet-anaz-java</id>
+            <name>CE205 Midterm Project Repository</name>
+            <url>https://github.com/SametAnaz/ce205-midterm-samet-anaz-java</url>
         </repository>
     </distributionManagement>
 
