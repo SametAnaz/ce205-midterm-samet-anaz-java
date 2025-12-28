@@ -5,9 +5,10 @@ var searchData=
   ['addcredential_2',['addCredential',['../classcom_1_1ucoruh_1_1password_1_1PasswordManager.html#a18c3f249db545c340acb1705e8fe8d17',1,'com::ucoruh::password::PasswordManager']]],
   ['addpasswordcontroller_3',['addpasswordcontroller',['../classcom_1_1ucoruh_1_1password_1_1gui_1_1AddPasswordController.html',1,'com.ucoruh.password.gui.AddPasswordController'],['../classcom_1_1ucoruh_1_1password_1_1gui_1_1AddPasswordController.html#acc8e3c4d1fd3367868d4da32215609e4',1,'com.ucoruh.password.gui.AddPasswordController.AddPasswordController()']]],
   ['addpasswordcontroller_2ejava_4',['AddPasswordController.java',['../AddPasswordController_8java.html',1,'']]],
-  ['authmanager_5',['AuthManager',['../classcom_1_1ucoruh_1_1password_1_1AuthManager.html',1,'com::ucoruh::password']]],
-  ['authmanager_2ejava_6',['AuthManager.java',['../AuthManager_8java.html',1,'']]],
-  ['autologin_7',['autoLogin',['../classcom_1_1ucoruh_1_1password_1_1AutoLoginManager.html#a63429ab60d36cc79362a7e6fef019eca',1,'com::ucoruh::password::AutoLoginManager']]],
-  ['autologinmanager_8',['AutoLoginManager',['../classcom_1_1ucoruh_1_1password_1_1AutoLoginManager.html',1,'com::ucoruh::password']]],
-  ['autologinmanager_2ejava_9',['AutoLoginManager.java',['../AutoLoginManager_8java.html',1,'']]]
+  ['addservicedependency_5',['addServiceDependency',['../classcom_1_1ucoruh_1_1password_1_1PasswordManager.html#a18f7fa5386cd46a2d49469fe9ddbe0ba',1,'com::ucoruh::password::PasswordManager']]],
+  ['authmanager_6',['AuthManager',['../classcom_1_1ucoruh_1_1password_1_1AuthManager.html',1,'com::ucoruh::password']]],
+  ['authmanager_2ejava_7',['AuthManager.java',['../AuthManager_8java.html',1,'']]],
+  ['autologin_8',['autoLogin',['../classcom_1_1ucoruh_1_1password_1_1AutoLoginManager.html#a63429ab60d36cc79362a7e6fef019eca',1,'com::ucoruh::password::AutoLoginManager']]],
+  ['autologinmanager_9',['AutoLoginManager',['../classcom_1_1ucoruh_1_1password_1_1AutoLoginManager.html',1,'com::ucoruh::password']]],
+  ['autologinmanager_2ejava_10',['AutoLoginManager.java',['../AutoLoginManager_8java.html',1,'']]]
 ];

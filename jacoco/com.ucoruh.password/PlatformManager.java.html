@@ -16,7 +16,7 @@ import java.util.List;
  *
  * This class provides methods for platform detection and compatibility information.
  */
-<span class="nc" id="L19">public class PlatformManager {</span>
+<span class="fc" id="L19">public class PlatformManager {</span>
 
     /**
      * List of supported platforms
@@ -51,14 +51,14 @@ import java.util.List;
      */
     public static String getCurrentPlatform() {
 <span class="fc" id="L53">        String osName = System.getProperty(&quot;os.name&quot;);</span>
-<span class="pc bpc" id="L54" title="1 of 2 branches missed.">        if (osName.toLowerCase().contains(&quot;windows&quot;)) {</span>
-<span class="nc" id="L55">            return &quot;Windows&quot;;</span>
-<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        } else if (osName.toLowerCase().contains(&quot;mac&quot;)) {</span>
-<span class="nc" id="L57">            return &quot;macOS&quot;;</span>
-<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        } else if (osName.toLowerCase().contains(&quot;linux&quot;)) {</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (osName.toLowerCase().contains(&quot;windows&quot;)) {</span>
+<span class="fc" id="L55">            return &quot;Windows&quot;;</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        } else if (osName.toLowerCase().contains(&quot;mac&quot;)) {</span>
+<span class="fc" id="L57">            return &quot;macOS&quot;;</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        } else if (osName.toLowerCase().contains(&quot;linux&quot;)) {</span>
 <span class="fc" id="L59">            return &quot;Linux&quot;;</span>
         } else {
-<span class="nc" id="L61">            return &quot;Unknown&quot;;</span>
+<span class="fc" id="L61">            return &quot;Unknown&quot;;</span>
         }
     }
     

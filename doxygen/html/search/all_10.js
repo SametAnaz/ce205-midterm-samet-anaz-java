@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['writeall_0',['writeall',['../classcom_1_1ucoruh_1_1password_1_1DatabasePasswordStorage.html#a26b59d024d16e04652ad406520dd0ce4',1,'com.ucoruh.password.DatabasePasswordStorage.writeAll()'],['../classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage.html#af65af5b5fca90a2021c0824cbb9eee77',1,'com.ucoruh.password.FilePasswordStorage.writeAll()'],['../interfacecom_1_1ucoruh_1_1password_1_1InterfacePasswordStorage.html#a79682a7a8403b0c830f54cfbdc0a2536',1,'com.ucoruh.password.InterfacePasswordStorage.writeAll()']]]
+  ['text_5fcolor_0',['TEXT_COLOR',['../classcom_1_1ucoruh_1_1password_1_1gui_1_1PasswordManagerGUI.html#a5abba487ff37eef107f9d21f5e63f0cd',1,'com::ucoruh::password::gui::PasswordManagerGUI']]],
+  ['tostring_1',['toString',['../classcom_1_1ucoruh_1_1password_1_1Password.html#a576182bb96979cfcf79af917faa6f0cb',1,'com::ucoruh::password::Password']]]
 ];

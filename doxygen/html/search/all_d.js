@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['text_5fcolor_0',['TEXT_COLOR',['../classcom_1_1ucoruh_1_1password_1_1gui_1_1PasswordManagerGUI.html#a5abba487ff37eef107f9d21f5e63f0cd',1,'com::ucoruh::password::gui::PasswordManagerGUI']]],
-  ['tostring_1',['toString',['../classcom_1_1ucoruh_1_1password_1_1Password.html#a576182bb96979cfcf79af917faa6f0cb',1,'com::ucoruh::password::Password']]]
+  ['queueoperation_0',['queueOperation',['../classcom_1_1ucoruh_1_1password_1_1PasswordManager.html#a46650f9cbd01df7e12d1358ff78df1da',1,'com::ucoruh::password::PasswordManager']]]
 ];

@@ -48,7 +48,7 @@ public class AuthManager {
 	 * @return AuthManager instance.
 	 */
 	public static AuthManager getInstance() {
-<span class="pc bpc" id="L51" title="1 of 2 branches missed.">		if (instance == null) {</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">		if (instance == null) {</span>
 <span class="fc" id="L52">			instance = new AuthManager();</span>
 		}
 <span class="fc" id="L54">		return instance;</span>
@@ -69,12 +69,12 @@ public class AuthManager {
 	 */
 	private void loadMasterPassword() {
 <span class="fc" id="L71">		File file = new File(MASTER_PASSWORD_FILE);</span>
-<span class="pc bpc" id="L72" title="1 of 2 branches missed.">		if (file.exists()) {</span>
-<span class="nc" id="L73">			try (BufferedReader reader = new BufferedReader(new FileReader(file))) {</span>
-<span class="nc" id="L74">				masterPassword = reader.readLine();</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">		if (file.exists()) {</span>
+<span class="fc" id="L73">			try (BufferedReader reader = new BufferedReader(new FileReader(file))) {</span>
+<span class="fc" id="L74">				masterPassword = reader.readLine();</span>
 <span class="nc" id="L75">			} catch (IOException e) {</span>
 <span class="nc" id="L76">				System.out.println(&quot;Error loading master password: &quot; + e.getMessage());</span>
-<span class="nc" id="L77">			}</span>
+<span class="fc" id="L77">			}</span>
 		}
 <span class="fc" id="L79">	}</span>
 	
@@ -140,30 +140,30 @@ public class AuthManager {
 	 * @return true if password change is successful.
 	 */
 	public boolean changeMasterPassword(Scanner scanner) {
-<span class="nc" id="L143">		System.out.print(&quot;Enter current master password: &quot;);</span>
-<span class="nc" id="L144">		String currentPassword = scanner.nextLine();</span>
-<span class="nc" id="L145">		String hashedCurrent = EncryptionUtil.hashString(currentPassword);</span>
+<span class="fc" id="L143">		System.out.print(&quot;Enter current master password: &quot;);</span>
+<span class="fc" id="L144">		String currentPassword = scanner.nextLine();</span>
+<span class="fc" id="L145">		String hashedCurrent = EncryptionUtil.hashString(currentPassword);</span>
 		
 		// Verify the current password before allowing a change
-<span class="nc bnc" id="L148" title="All 4 branches missed.">		if (!masterPassword.equals(hashedCurrent) &amp;&amp; !masterPassword.equals(currentPassword)) {</span>
-<span class="nc" id="L149">			System.out.println(&quot;Incorrect current password.&quot;);</span>
-<span class="nc" id="L150">			return false;</span>
+<span class="fc bfc" id="L148" title="All 4 branches covered.">		if (!masterPassword.equals(hashedCurrent) &amp;&amp; !masterPassword.equals(currentPassword)) {</span>
+<span class="fc" id="L149">			System.out.println(&quot;Incorrect current password.&quot;);</span>
+<span class="fc" id="L150">			return false;</span>
 		}
 		
-<span class="nc" id="L153">		System.out.print(&quot;Enter new master password: &quot;);</span>
-<span class="nc" id="L154">		String newPassword = scanner.nextLine();</span>
-<span class="nc" id="L155">		System.out.print(&quot;Confirm new master password: &quot;);</span>
-<span class="nc" id="L156">		String confirmPassword = scanner.nextLine();</span>
+<span class="fc" id="L153">		System.out.print(&quot;Enter new master password: &quot;);</span>
+<span class="fc" id="L154">		String newPassword = scanner.nextLine();</span>
+<span class="fc" id="L155">		System.out.print(&quot;Confirm new master password: &quot;);</span>
+<span class="fc" id="L156">		String confirmPassword = scanner.nextLine();</span>
 		
-<span class="nc bnc" id="L158" title="All 2 branches missed.">		if (!newPassword.equals(confirmPassword)) {</span>
-<span class="nc" id="L159">			System.out.println(&quot;Passwords do not match.&quot;);</span>
-<span class="nc" id="L160">			return false;</span>
+<span class="fc bfc" id="L158" title="All 2 branches covered.">		if (!newPassword.equals(confirmPassword)) {</span>
+<span class="fc" id="L159">			System.out.println(&quot;Passwords do not match.&quot;);</span>
+<span class="fc" id="L160">			return false;</span>
 		}
 		
-<span class="nc" id="L163">		masterPassword = EncryptionUtil.hashString(newPassword);</span>
-<span class="nc" id="L164">		saveMasterPassword();</span>
-<span class="nc" id="L165">		System.out.println(&quot;Master password changed successfully.&quot;);</span>
-<span class="nc" id="L166">		return true;</span>
+<span class="fc" id="L163">		masterPassword = EncryptionUtil.hashString(newPassword);</span>
+<span class="fc" id="L164">		saveMasterPassword();</span>
+<span class="fc" id="L165">		System.out.println(&quot;Master password changed successfully.&quot;);</span>
+<span class="fc" id="L166">		return true;</span>
 	}
 	
 	/**
@@ -182,29 +182,29 @@ public class AuthManager {
 <span class="fc" id="L182">			String input = scanner.nextLine();</span>
 			try {
 <span class="fc" id="L184">				int choice = Integer.parseInt(input);</span>
-<span class="pc bpc" id="L185" title="3 of 4 branches missed.">				switch (choice) {</span>
+<span class="fc bfc" id="L185" title="All 4 branches covered.">				switch (choice) {</span>
 					case 1:
-<span class="nc" id="L187">						changeMasterPassword(scanner);</span>
-<span class="nc" id="L188">						break;</span>
+<span class="fc" id="L187">						changeMasterPassword(scanner);</span>
+<span class="fc" id="L188">						break;</span>
 					case 2:
-<span class="nc" id="L190">						System.out.print(&quot;Enter master password to verify: &quot;);</span>
-<span class="nc" id="L191">						String testPassword = scanner.nextLine();</span>
-<span class="nc" id="L192">						String hashedTest = EncryptionUtil.hashString(testPassword);</span>
-<span class="nc bnc" id="L193" title="All 4 branches missed.">						if (masterPassword.equals(hashedTest) || masterPassword.equals(testPassword)) {</span>
-<span class="nc" id="L194">							System.out.println(&quot;Authentication successful.&quot;);</span>
+<span class="fc" id="L190">						System.out.print(&quot;Enter master password to verify: &quot;);</span>
+<span class="fc" id="L191">						String testPassword = scanner.nextLine();</span>
+<span class="fc" id="L192">						String hashedTest = EncryptionUtil.hashString(testPassword);</span>
+<span class="fc bfc" id="L193" title="All 4 branches covered.">						if (masterPassword.equals(hashedTest) || masterPassword.equals(testPassword)) {</span>
+<span class="fc" id="L194">							System.out.println(&quot;Authentication successful.&quot;);</span>
 						} else {
-<span class="nc" id="L196">							System.out.println(&quot;Authentication failed.&quot;);</span>
+<span class="fc" id="L196">							System.out.println(&quot;Authentication failed.&quot;);</span>
 						}
-<span class="nc" id="L198">						break;</span>
+<span class="fc" id="L198">						break;</span>
 					case 0:
 <span class="fc" id="L200">						back = true;</span>
 <span class="fc" id="L201">						break;</span>
 					default:
-<span class="nc" id="L203">						System.out.println(&quot;Invalid choice.&quot;);</span>
+<span class="fc" id="L203">						System.out.println(&quot;Invalid choice.&quot;);</span>
 						break;
 				}
-<span class="nc" id="L206">			} catch (NumberFormatException e) {</span>
-<span class="nc" id="L207">				System.out.println(&quot;Invalid number.&quot;);</span>
+<span class="fc" id="L206">			} catch (NumberFormatException e) {</span>
+<span class="fc" id="L207">				System.out.println(&quot;Invalid number.&quot;);</span>
 <span class="fc" id="L208">			}</span>
 <span class="fc" id="L209">		}</span>
 <span class="fc" id="L210">	}</span>

@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix" kind="class"><name>com::ucoruh::password::PasswordManager::AccessMatrix</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix_1a6cca3b006574edda934aa9f90e08d2e1" kind="variable"><name>matrix</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix_1ad0339b55cecc4e2ad7df8b62d359fac2" kind="function"><name>AccessMatrix</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix_1a7fdef62c5aefdb8e78efc82191bc8f47" kind="function"><name>recordAccess</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix_1a53c3e78786488f24df737e598a6306f8" kind="function"><name>getAccessPattern</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix_1a67cff2c087aa4305a18df464aec6ccf2" kind="function"><name>getTotalAccessCount</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix_1a650d86dfa50fef1264430274720bf83f" kind="function"><name>getMostAccessedServices</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix_1ad03609fb98da1977542d6c65bffe6007" kind="function"><name>getAllServices</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix_1a114c67d52682239afb02fc33e60a88f3" kind="function"><name>clear</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AccessMatrix_1ac7c77eb1a3f9fe9ca15e92423f9be562" kind="function"><name>size</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AddCredentialCommand" kind="class"><name>com::ucoruh::password::PasswordManager::AddCredentialCommand</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AddCredentialCommand_1a82f16968298fb67b06c544955dbb823b" kind="variable"><name>account</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AddCredentialCommand_1afe8a9844c1d9754f365df69c73cfa3ed" kind="variable"><name>password</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AddCredentialCommand_1a69dbf093ecc2e434c232d74c03342754" kind="function"><name>AddCredentialCommand</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AddCredentialCommand_1a7579e6b4c4f2b0ad3cfbfc04084aec1f" kind="function"><name>execute</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1AddCredentialCommand_1afbe045e53c22d1b3b26724dc61fbba5d" kind="function"><name>undo</name></member>
+  </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1AddPasswordController" kind="class"><name>com::ucoruh::password::gui::AddPasswordController</name>
     <member refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1AddPasswordController_1ab70dc4b82106f208a4cb2e47bcd0b9d7" kind="variable"><name>gui</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1AddPasswordController_1ab22e67c83bad6e7475673bdd15be8f80" kind="variable"><name>dialog</name></member>
@@ -47,6 +65,44 @@
     <member refid="classcom_1_1ucoruh_1_1password_1_1AutoLoginManager_1a63429ab60d36cc79362a7e6fef019eca" kind="function"><name>autoLogin</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1AutoLoginManager_1af2802356b5bc4441678252e400695b66" kind="function"><name>menu</name></member>
   </compound>
+  <compound refid="interfacecom_1_1ucoruh_1_1password_1_1PasswordManager_1_1Command" kind="interface"><name>com::ucoruh::password::PasswordManager::Command</name>
+    <member refid="interfacecom_1_1ucoruh_1_1password_1_1PasswordManager_1_1Command_1add82e6527f4adfe74e262a1010262c63" kind="function"><name>execute</name></member>
+    <member refid="interfacecom_1_1ucoruh_1_1password_1_1PasswordManager_1_1Command_1af69df37031803eb127098db59319baa2" kind="function"><name>undo</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack" kind="class"><name>com::ucoruh::password::PasswordManager::CommandStack</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1aafe544aca57c41fc22b125feff6c5e4d" kind="variable"><name>top</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1a62238632fb2af0898c4100d746ff78fd" kind="variable"><name>size</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1a6e845bc8abe4375b8ba76482a605afb4" kind="function"><name>CommandStack</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1a27c00fe54c864c3997dc5e78d74d6b7b" kind="function"><name>push</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1a0dcdcb8af36e5df5318158520ceb1e6e" kind="function"><name>pop</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1a8ce1ae689f95a60cf6bd276234e140b7" kind="function"><name>peek</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1ad265b1f57ec502f21a766e0879dd8355" kind="function"><name>isEmpty</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1a057dddbe286afb99bdf32053fc89b706" kind="function"><name>size</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1a36c6f96226ddb6cf081b1e055db526f4" kind="function"><name>clear</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable" kind="class"><name>com::ucoruh::password::PasswordManager::CustomHashTable</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a00b557acdce36c590ea1931a9ff5dcd3" kind="variable"><name>buckets</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1ae9259481488440aaf16f2e7f4a1069e9" kind="variable"><name>size</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a7e172c994a9a7362d5fab3cd1c5b1e17" kind="variable"><name>capacity</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1ae3a0cbf75a57e59f3b17a9228a323229" kind="variable"><name>collisionCount</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a0f338fafecf0f01a3c5fb557c2064de6" kind="variable"><name>DEFAULT_CAPACITY</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a4713c775fcc4fc6c02965656c7e19c04" kind="variable"><name>LOAD_FACTOR_THRESHOLD</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a6726954c3eefcfc0054592ba87460335" kind="function"><name>CustomHashTable</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a6860ed45dd472f5cf21709419fb7d043" kind="function"><name>CustomHashTable</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a366bba26d2b9bafe0a915538ad6bdfec" kind="function"><name>put</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a7e0819d69347dd1be378b89d8234f84b" kind="function"><name>get</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a197d89d845bd3b7eb30fcdccab5c9655" kind="function"><name>remove</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1ade72c24537dda44e125c5c89e7727524" kind="function"><name>containsKey</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1ad7798412014205885596b29cdc8a0c8d" kind="function"><name>size</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a33caac661e9c03bb91c58b25417c46f8" kind="function"><name>isEmpty</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1ab2a7e92a8ff534af0915557758a68dea" kind="function"><name>clear</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a803cbd1527fcc713fd981b17267c7aee" kind="function"><name>getLoadFactor</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1ac5cd27909d56f1ac28904e5726fd4299" kind="function"><name>getCollisionCount</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a456de6cac6c6e7ff12f983554bbe7312" kind="function"><name>keySet</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1ad8dd05235ead51bf27719b4191bc8823" kind="function"><name>values</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1aeb472b28c3887c2c2671ccd3ac9ebba1" kind="function"><name>hash</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1a089c83160a940b0f7caea9d0db82eb8d" kind="function"><name>resize</name></member>
+  </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1DatabasePasswordStorage" kind="class"><name>com::ucoruh::password::DatabasePasswordStorage</name>
     <member refid="classcom_1_1ucoruh_1_1password_1_1DatabasePasswordStorage_1abe5bd35d83e3f33648791ec682d8c6fe" kind="variable"><name>DB_URL</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1DatabasePasswordStorage_1a47bd8163300861398fe0a7927ea4cbdf" kind="variable"><name>masterPassword</name></member>
@@ -87,9 +143,16 @@
     <member refid="classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_1a4eb23e72ff8a79a0d0fd1035075a0ee4" kind="function"><name>hashString</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_1af89c33c59b778365d6d485119b7bc64b" kind="function"><name>createSecretKey</name></member>
   </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1_1Entry" kind="class"><name>com::ucoruh::password::PasswordManager::CustomHashTable::Entry</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1_1Entry_1a4e2674a1507a4dd3547abe5d407b20a3" kind="variable"><name>key</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1_1Entry_1a9171756f52591743d3ae0cf573747dc8" kind="variable"><name>value</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1_1Entry_1af4c355dcc9218bb51620cf8b02db8e40" kind="variable"><name>next</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CustomHashTable_1_1Entry_1a35abe64db0625c69c985212abe8b75a9" kind="function"><name>Entry</name></member>
+  </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage" kind="class"><name>com::ucoruh::password::FilePasswordStorage</name>
     <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1aab77f89c0b09a56c5e7e2763bf5469fa" kind="variable"><name>FILE</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1aadf0247be99b941e2682a149100885ba" kind="variable"><name>masterPassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1ad120bed0020e07dada2dd7e2b7d14e00" kind="variable"><name>auditLog</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1a3c3ac494750d220ea0805851f166d061" kind="function"><name>FilePasswordStorage</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1a8fc35fcfc82e8e34d1061b28fb24a0b5" kind="function"><name>add</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1a58f0fd74ada8b31a9288c04f1335f538" kind="function"><name>view</name></member>
@@ -97,6 +160,11 @@
     <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1a769bbc8b5e780b402d8b4503dc064eef" kind="function"><name>delete</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1a2a79362bebd36965f359f256750f5147" kind="function"><name>readAll</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1af65af5b5fca90a2021c0824cbb9eee77" kind="function"><name>writeAll</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1a0ca9c485d62a02af6d52810b2513c16c" kind="function"><name>recordAudit</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1aa277e8940514e029c8c0590b1e6583ac" kind="function"><name>getAuditLog</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1aa2ffbd589263fd4341c74126dbc15d86" kind="function"><name>getRecentAuditLog</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1ad7141d7bfbdc284085cdf285fc9f095d" kind="function"><name>getAuditLogSize</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1aa53069d17c4f9292162947efd877e97f" kind="function"><name>clearAuditLog</name></member>
   </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1GeneratePasswordController" kind="class"><name>com::ucoruh::password::gui::GeneratePasswordController</name>
     <member refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1GeneratePasswordController_1a5f0f3095a6e61a4842869d1e9af78f5f" kind="variable"><name>gui</name></member>
@@ -119,6 +187,16 @@
     <member refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1GeneratePasswordController_1af6ee726c9d14e4d893666edcbdd1cb98" kind="function"><name>createButtonPanel</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1GeneratePasswordController_1aea45f38f8bd3492dc8ec4d807ab854c0" kind="function"><name>savePassword</name></member>
   </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1_1HuffmanNode" kind="class"><name>com::ucoruh::password::PasswordGenerator::HuffmanNode</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1_1HuffmanNode_1a492dd18a2bca98d73a4a188e15c4e65b" kind="variable"><name>character</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1_1HuffmanNode_1ab87388c2c16931d1dcc9551abd554149" kind="variable"><name>frequency</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1_1HuffmanNode_1a8d11f874def6c41607ea9ad6a32129c0" kind="variable"><name>left</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1_1HuffmanNode_1aaf583686f4026c19a28c56b96a763265" kind="variable"><name>right</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1_1HuffmanNode_1a3932ace770fc577328e8c450001697c3" kind="function"><name>HuffmanNode</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1_1HuffmanNode_1ace797d1e48b7b2790c2e0bd0d8a8a308" kind="function"><name>HuffmanNode</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1_1HuffmanNode_1ac8a25feac829417c280d38f740d8c7d7" kind="function"><name>isLeaf</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1_1HuffmanNode_1a3755f2d122b3c021678bb2b8c5a3bcc1" kind="function"><name>compareTo</name></member>
+  </compound>
   <compound refid="interfacecom_1_1ucoruh_1_1password_1_1InterfacePasswordStorage" kind="interface"><name>com::ucoruh::password::InterfacePasswordStorage</name>
     <member refid="interfacecom_1_1ucoruh_1_1password_1_1InterfacePasswordStorage_1a0fe076c31fbdcf4a4bb9d5902851fca9" kind="function"><name>add</name></member>
     <member refid="interfacecom_1_1ucoruh_1_1password_1_1InterfacePasswordStorage_1a1dd4753ae620eb3ec34006f979e476c1" kind="function"><name>view</name></member>
@@ -127,16 +205,46 @@
     <member refid="interfacecom_1_1ucoruh_1_1password_1_1InterfacePasswordStorage_1a510a9229f4894c56948b68c6e9533377" kind="function"><name>readAll</name></member>
     <member refid="interfacecom_1_1ucoruh_1_1password_1_1InterfacePasswordStorage_1a79682a7a8403b0c830f54cfbdc0a2536" kind="function"><name>writeAll</name></member>
   </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1_1Node" kind="class"><name>com::ucoruh::password::FilePasswordStorage::XORLinkedList::Node</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1_1Node_1addeab970b79203d5ffefcc86356c7f03" kind="variable"><name>operation</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1_1Node_1a4f6e5e896a299c41c202b11766689f26" kind="variable"><name>service</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1_1Node_1a29fd264117cd2359368474913907fea2" kind="variable"><name>timestamp</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1_1Node_1a756e2002fe36f418ab4a526386bcead9" kind="variable"><name>prev</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1_1Node_1a90fca271e786ecb4298420750c6b3ddc" kind="variable"><name>next</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1_1Node_1a0cfa26dbdffebe298af9ff56909a95c2" kind="function"><name>Node</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1_1Node" kind="class"><name>com::ucoruh::password::Password::PasswordHistory::Node</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1_1Node_1a554805561d52d0afe71a9a2a9ef45e65" kind="variable"><name>password</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1_1Node_1a90f235b064a0b872137db6010531c598" kind="variable"><name>timestamp</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1_1Node_1aa75d4355f405e361af989bc11e45ab6e" kind="variable"><name>prev</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1_1Node_1a3b34bf9c99f4f56d8824a722bfdb4621" kind="variable"><name>next</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1_1Node_1a98b6ae31e99bb9f52fe90ab6630ba20c" kind="function"><name>Node</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1_1Node" kind="class"><name>com::ucoruh::password::PasswordManager::CommandStack::Node</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1_1Node_1a6c1e54894d40e8e7864ff8fe2bbd2819" kind="variable"><name>command</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1_1Node_1a651fb80b9621e7ac70c35745c5c712c2" kind="variable"><name>next</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1CommandStack_1_1Node_1ad36be0499db1794aebd4df9b498429f6" kind="function"><name>Node</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1_1Node" kind="class"><name>com::ucoruh::password::PasswordManager::PendingOperationsQueue::Node</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1_1Node_1a8fbd873b7e62c07266071c1e8c7c3593" kind="variable"><name>operation</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1_1Node_1a9e70b7d96beb0cf151f44abd3fd2c089" kind="variable"><name>next</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1_1Node_1ac1384f748e2fa34d9807553f423e297d" kind="function"><name>Node</name></member>
+  </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1Password" kind="class"><name>com::ucoruh::password::Password</name>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a96d88995d6f6d75cdbde758800706632" kind="variable"><name>service</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a34cc4b9842e9cc614483ae6b834d5354" kind="variable"><name>username</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a2369a07982462a155b5072bfa9235f9a" kind="variable"><name>password</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a90384afd2ddd22515814eb0af0219a8c" kind="variable"><name>history</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a2426ee892932f9622c7c9e0dba29b12f" kind="function"><name>Password</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1aeee47c0814f07a2786e001de460dca56" kind="function"><name>getService</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1ac71524f3858846e80ae071427f8dbbbb" kind="function"><name>getUsername</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1ae283c08b711f5184d21d6e4cb8bc84fd" kind="function"><name>getPassword</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a61385ad34ca377c79c6e1c5042b7da1b" kind="function"><name>setUsername</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a50fde41c22e09aa73e41a27cbc0e1458" kind="function"><name>setPassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a4c5beabd8bf2faf436280f3931c026f8" kind="function"><name>setPasswordWithHistory</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a906370a756b71d9a6e552ca7e795eed0" kind="function"><name>getPasswordHistory</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a8222b8e5fb41d97733366f5defbd8f0e" kind="function"><name>getHistorySize</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a2d72527ad21b5d94d5ff8fbd227d75a8" kind="function"><name>clearHistory</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1a576182bb96979cfcf79af917faa6f0cb" kind="function"><name>toString</name></member>
   </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordApp" kind="class"><name>com::ucoruh::password::PasswordApp</name>
@@ -144,6 +252,10 @@
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordApp_1a640e1d366f86d17023d58550428ff795" kind="function"><name>main</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordApp_1af4a6e622a299abda0a51cfb6dac5540e" kind="function"><name>passwordGeneratorMenu</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordApp_1a3fa76d7d89d53ee109ef7b3d11f1ec87" kind="function"><name>platformMenu</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordApp_1a932c0c95b2491604343acb93d9353e3f" kind="function"><name>isConsoleMode</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordApp_1ae3846688e44a19c0dd45e68746e2447f" kind="function"><name>startGUIMode</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordApp_1a06a7cbf0edb792b4a3d50f3514fd7b88" kind="function"><name>setupLookAndFeel</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordApp_1a88811ecbc7aa00632e8c5bfada049c51" kind="function"><name>createAndShowGUI</name></member>
   </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator" kind="class"><name>com::ucoruh::password::PasswordGenerator</name>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a125dfe1a06b43250abf25b22cc6d422c" kind="variable"><name>UPPERCASE_CHARS</name></member>
@@ -154,18 +266,71 @@
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a8aea66fb62433e17575299ffd6ba0b52" kind="function"><name>generatePassword</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1ab6f966910167edd4d17e634dbd4d6db2" kind="function"><name>generatePassword</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a310273be744ee0a5983a605d0ee8dc66" kind="function"><name>generate</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a793650890150f282e9460c055962b98c" kind="function"><name>kmpSearch</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a33b8f3eca7442e35777426da151394d0" kind="function"><name>containsPattern</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a6b63ae92b93d8ae13ce7e9683f20cf84" kind="function"><name>isWeakPattern</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a87ccc96bbee98b2df8b16f031e182c62" kind="function"><name>generateStrongPassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a86f1c917e29f99d7c01abdf086eab3ce" kind="function"><name>buildHuffmanTree</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a22ad9d3794331252dc56c5dca454c6ef" kind="function"><name>generateHuffmanCodes</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1ad0348e1e46440fe564786c8ec86eed07" kind="function"><name>compressPassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1acc9b2e16fb7ec913906b58f905735c2c" kind="function"><name>decompressPassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1acffc8e693741047cb229a1e057388df5" kind="function"><name>getCompressionRatio</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1ae5fcc411a77909dc2f315491de962341" kind="function"><name>computeLPSArray</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordGenerator_1a625a19a55a948a323761254744fc57b0" kind="function"><name>generateCodesHelper</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory" kind="class"><name>com::ucoruh::password::Password::PasswordHistory</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1a3c26a87df9fd326e08ba90d3627fb1b2" kind="variable"><name>head</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1a4eb2781590ab3b647ee44fe2003a44c8" kind="variable"><name>tail</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1aef4e7208017f3f3787c8b268e6a213a8" kind="variable"><name>size</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1a5f85566f6374656072443f3ceca14772" kind="function"><name>PasswordHistory</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1acd3824a63741a81f74fa8108a0ff2818" kind="function"><name>addPassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1a3b66ee7d70088c6d01564964ab18304e" kind="function"><name>getHistory</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1ad34d49be4c4bc6a0429a717ba4ab8327" kind="function"><name>getSize</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistory_1ad645680301fa1e059bba1b755c7b4a24" kind="function"><name>clear</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistoryEntry" kind="class"><name>com::ucoruh::password::Password::PasswordHistoryEntry</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistoryEntry_1a1a72ae4115818ac38d1388bd38383fe1" kind="variable"><name>password</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistoryEntry_1a48831eee5668b637ea4205d7c777b610" kind="variable"><name>timestamp</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistoryEntry_1a00cbcb5d944ad954ca4bf88f1c190422" kind="function"><name>PasswordHistoryEntry</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistoryEntry_1a9cf1276f7734fcbc07a3f5e513609b59" kind="function"><name>getPassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1Password_1_1PasswordHistoryEntry_1abed762de8aae861447be51e493d599dc" kind="function"><name>getTimestamp</name></member>
   </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager" kind="class"><name>com::ucoruh::password::PasswordManager</name>
-    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a634662335d29380ac2e88f0cf557b231" kind="variable"><name>credentials</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a9965f275e47aa151c8b1e0e9cc049d2a" kind="variable"><name>credentials</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a7cff5a6dafccaa5187a9b97a7d9c715f" kind="variable"><name>masterPassword</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1aef621de5c8060111bdc6aa7d21fcb8c1" kind="variable"><name>storage</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a59da095945256d78717ed1acff97a8cf" kind="variable"><name>accessMatrix</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a3ba8329bbae542ba059a1e5013e8eda7" kind="variable"><name>undoStack</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1ad6b9effe9cdce31bcb98d96860f83cf7" kind="variable"><name>serviceGraph</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a9130687fd5a5160b8bdc946438cc0c88" kind="variable"><name>redoStack</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1aadac6fc544ef390f2add6a94109d67db" kind="variable"><name>operationsQueue</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a903e09f359bffd2d40b66bcd240aaefd" kind="function"><name>PasswordManager</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a614074076c79b74a2575a56dfe6ba079" kind="function"><name>PasswordManager</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a18c3f249db545c340acb1705e8fe8d17" kind="function"><name>addCredential</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a6275d915b04160563e97237369a26aff" kind="function"><name>getCredential</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1aeab5cd10965bfd438136654a484874ae" kind="function"><name>getAccessPattern</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1af8b1630aa430e6fc20cdf51391ee7317" kind="function"><name>getMostAccessedServices</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1abe4d1b18f4b4e74c8b954547af77a2a7" kind="function"><name>getTotalAccessCount</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a3062c419c3241bd72365080b8962a553" kind="function"><name>undo</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1abd86456cd4ba9ffd4a701c1337d3aee4" kind="function"><name>redo</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1ab07785bbca6ce45037c8a68fad078775" kind="function"><name>canUndo</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a81c8f2ad6f6eb4d7b7b188e7a8479a7d" kind="function"><name>canRedo</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a6fc0efa64346092b3a41b5706c98e1e0" kind="function"><name>menu</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1adc71265d84a9e2cf67d7db9da0f49d0e" kind="function"><name>getMostUsedServicesByHeapSort</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1ac0d486da7ffbba0c8bb00e38eb8d6363" kind="function"><name>getRelatedServices</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a18f7fa5386cd46a2d49469fe9ddbe0ba" kind="function"><name>addServiceDependency</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a7e0f8bc223e7eb94d5f3d00a54ef8c17" kind="function"><name>getServiceClusters</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a196bb3c9f117a1f60e6d6b6c7eade531" kind="function"><name>getServiceGraph</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a46650f9cbd01df7e12d1358ff78df1da" kind="function"><name>queueOperation</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1adb7d4c80e8f7b1d47d5f2690904e6a03" kind="function"><name>processPendingOperations</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a3de7731643c723d4e3dcf2c76d721b7b" kind="function"><name>getPendingOperationsCount</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a4cd5258b6426e6a932b8b3dfe172c4a1" kind="function"><name>peekNextOperation</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a374cd558c1a9a6e1a4ef37a2a4316703" kind="function"><name>getOperationsQueue</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1aa27558f501baddc354ff46d0bd0cbcaf" kind="function"><name>loadCredentials</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a2a1d3846cdcb854e41fbcf8ecc8d5ee9" kind="function"><name>recordServiceAccess</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1af8c61b3df8c46230f4f6810b9d209190" kind="function"><name>generateAndSavePassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a965124142d7b0d615a1cd9295c6c36c7" kind="function"><name>heapSort</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1ad970a74e57803f4666d62940de9f34a6" kind="function"><name>heapify</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1ac54c89533970ab1079065cf2fac576f4" kind="function"><name>runApp</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1a3cb37a64c5cc86e0075dd195a8374d6e" kind="function"><name>main</name></member>
   </compound>
@@ -205,6 +370,19 @@
   <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordStorageFactory" kind="class"><name>com::ucoruh::password::PasswordStorageFactory</name>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordStorageFactory_1a6f84a4200fa81f059dbc453610cdfc5e" kind="function"><name>create</name></member>
   </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue" kind="class"><name>com::ucoruh::password::PasswordManager::PendingOperationsQueue</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1a61b4fb60c7c32b69dac78b1f3fbe47c5" kind="variable"><name>front</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1a962b8a78a64121561bf2b8facedde362" kind="variable"><name>rear</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1a7a0ac89931750e5ad068248c7dc3cbcf" kind="variable"><name>size</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1a1e687e02b0efe2c5e826c6199517a8cf" kind="function"><name>PendingOperationsQueue</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1a42db7463ee4893a723be9c9b5cbc69e0" kind="function"><name>enqueue</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1aa7c571dde241052db3b9af22b5733f64" kind="function"><name>dequeue</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1a9ab2b9a9622ee7ae54b9f5ff3029f0cd" kind="function"><name>peek</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1ab6a928c81084a28b0781423d41a86c41" kind="function"><name>isEmpty</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1a23fb33f97878a303e296b7f18307dd82" kind="function"><name>size</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1a00fb79eb4a813f411764d00448ee2652" kind="function"><name>clear</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1PendingOperationsQueue_1aec3ffd33e98d0df6e68e7dce5a9eb421" kind="function"><name>toList</name></member>
+  </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1PlatformManager" kind="class"><name>com::ucoruh::password::PlatformManager</name>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PlatformManager_1ad66fecede228bbc1c237431f13c8f732" kind="variable"><name>SUPPORTED_PLATFORMS</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1PlatformManager_1a0ed6dd9a7435c3135c0d0b2a4608d7bf" kind="function"><name>showPlatforms</name></member>
@@ -214,9 +392,41 @@
   </compound>
   <compound refid="classPlatformManager" kind="class"><name>PlatformManager</name>
   </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph" kind="class"><name>com::ucoruh::password::PasswordManager::ServiceGraph</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a5a568a562fdc78860af8d7e1855211c8" kind="variable"><name>adjacencyList</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a87bde37356b31ae40e3f3e16b7be5e55" kind="variable"><name>reverseAdjacencyList</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a5edc25667cf464990da0d0589f991286" kind="function"><name>ServiceGraph</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1abc0c51318600cdb0230564f0e5a664d3" kind="function"><name>addEdge</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1aebccaa47b9084c84f5e0f2ad076fd589" kind="function"><name>bfs</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a7b10b5d87bdf6f029a26a666ef8f03f0" kind="function"><name>dfs</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a393c7a8e14c2b2cb0589beda0b1c38c8" kind="function"><name>findStronglyConnectedComponents</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a02c0ef5067642be6c60b6edcbbac8fdf" kind="function"><name>getAllServices</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a8de0c9e242da9bd9ea1fdbd4e8250f0b" kind="function"><name>getNeighbors</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1af771c99dab1bd0f9e99c4580029ac95c" kind="function"><name>containsService</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1afc6e90fbbe07e7a855ad053640342c3b" kind="function"><name>clear</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a6c38bc9a0f0258157f5ca08d23991a0d" kind="function"><name>dfsHelper</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a7c0af9756b4a1500e8bd92c9dffa781b" kind="function"><name>fillFinishStack</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceGraph_1a89065a9758097b06edbe44a287e5432e" kind="function"><name>dfsReverse</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceUsage" kind="class"><name>com::ucoruh::password::PasswordManager::ServiceUsage</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceUsage_1ad47f769b4126295549fb36158ed7dd56" kind="variable"><name>service</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceUsage_1a99d96c75e441dabb6b19c129a3082c64" kind="variable"><name>usageCount</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceUsage_1ac76c070fe013f3c3018a9db11f867795" kind="function"><name>ServiceUsage</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceUsage_1a237553a5799e8195bc81ba8c059d5e48" kind="function"><name>getService</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceUsage_1af2678e9e305270352390ab258018e696" kind="function"><name>getUsageCount</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1ServiceUsage_1a1771ac2ac72cb4d61add2dd50388716d" kind="function"><name>compareTo</name></member>
+  </compound>
   <compound refid="enumcom_1_1ucoruh_1_1password_1_1StorageType" kind="enum"><name>com::ucoruh::password::StorageType</name>
     <member refid="enumcom_1_1ucoruh_1_1password_1_1StorageType_1abf055d3f5792b39ddce614391f38fe3d" kind="variable"><name>FILE</name></member>
     <member refid="enumcom_1_1ucoruh_1_1password_1_1StorageType_1aa5cd323ea0d9febe1387d0487ad55846" kind="variable"><name>SQLITE</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1UpdateCredentialCommand" kind="class"><name>com::ucoruh::password::PasswordManager::UpdateCredentialCommand</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1UpdateCredentialCommand_1a8a78b523bc76016f52a23504f30ba421" kind="variable"><name>account</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1UpdateCredentialCommand_1a2cab2d4c4243b4781387063362e86ef7" kind="variable"><name>oldPassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1UpdateCredentialCommand_1ab076ba21f676b37b30a3683b63865df1" kind="variable"><name>newPassword</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1UpdateCredentialCommand_1ac54f3931bbe49d0a4eb88e271dc6bd1a" kind="function"><name>UpdateCredentialCommand</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1UpdateCredentialCommand_1a7af337a954b73594baa9542a63e45723" kind="function"><name>execute</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1PasswordManager_1_1UpdateCredentialCommand_1a009c7d62bf761df8d3d06845ae3ba876" kind="function"><name>undo</name></member>
   </compound>
   <compound refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1UpdatePasswordController" kind="class"><name>com::ucoruh::password::gui::UpdatePasswordController</name>
     <member refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1UpdatePasswordController_1a6ab6f7ed76beb95ba0a432b370c166a8" kind="variable"><name>gui</name></member>
@@ -248,6 +458,17 @@
     <member refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1ViewPasswordController_1a4c2370fbff11ede6713aca4c116dc354" kind="function"><name>createPasswordTable</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1ViewPasswordController_1a5ed9c348f3255ea5551416e62ee3187e" kind="function"><name>createButtonPanel</name></member>
     <member refid="classcom_1_1ucoruh_1_1password_1_1gui_1_1ViewPasswordController_1afa16763a57184b075f6ecd3fadd5d24e" kind="function"><name>showPassword</name></member>
+  </compound>
+  <compound refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList" kind="class"><name>com::ucoruh::password::FilePasswordStorage::XORLinkedList</name>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1a4db572c1e657d6410d4779499ee3c126" kind="variable"><name>head</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1a596c706117ee429a722faa421d555a7d" kind="variable"><name>tail</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1a5ee300184a057756114bdbd6fae4aeeb" kind="variable"><name>size</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1a5e7aa7b0311a2e7b1390643a7b64e200" kind="function"><name>XORLinkedList</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1abccf382152ad9be1a8acfb3052439d1c" kind="function"><name>insert</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1a462782d6994aa6a49f5edff35cd75e84" kind="function"><name>traverse</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1abf027be68f3e458036232c8c6e8d1c00" kind="function"><name>size</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1a0014b97f1cda82e1b78aa0f7769728eb" kind="function"><name>clear</name></member>
+    <member refid="classcom_1_1ucoruh_1_1password_1_1FilePasswordStorage_1_1XORLinkedList_1a43448b8d1acc76967821acb379ee6ea3" kind="function"><name>getRecentEntries</name></member>
   </compound>
   <compound refid="namespacecom" kind="namespace"><name>com</name>
   </compound>
