@@ -4,7 +4,11 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
+ * @file PasswordApp.java
+ * @class PasswordApp
  * @brief Entry point for the Password Manager console application.
+ * @author Password Manager Team
+ * @version 1.0
  *
  * This class provides the main method for launching the application and a runApp method
  * which handles the overall flow of the application including authentication and menu operations.

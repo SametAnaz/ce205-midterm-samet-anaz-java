@@ -10,6 +10,8 @@ import java.util.PriorityQueue;
  * @file PasswordGenerator.java
  * @class PasswordGenerator
  * @brief Utility class for generating random passwords.
+ * @author Password Manager Team
+ * @version 1.0
  * @details This class provides methods to generate secure random passwords using configurable
  * character sets.
  */

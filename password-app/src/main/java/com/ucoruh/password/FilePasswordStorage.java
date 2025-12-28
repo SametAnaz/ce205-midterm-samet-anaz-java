@@ -4,7 +4,11 @@ import java.io.*;
 import java.util.*;
 
 /**
+ * @file FilePasswordStorage.java
+ * @class FilePasswordStorage
  * @brief Implementation of InterfacePasswordStorage using file-based storage.
+ * @author Password Manager Team
+ * @version 1.0
  *
  * This class provides file-based operations to store, retrieve, update, and delete password entries.
  * All password data is encrypted using the master password.

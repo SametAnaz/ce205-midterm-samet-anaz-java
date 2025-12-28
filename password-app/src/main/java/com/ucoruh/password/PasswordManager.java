@@ -18,7 +18,11 @@ import java.util.Stack;
 import java.util.stream.Collectors;
 
 /**
+ * @file PasswordManager.java
+ * @class PasswordManager
  * @brief Main class for the Password Manager application.
+ * @author Password Manager Team
+ * @version 1.0
  *
  * Manages secure storage and retrieval of credentials using a master password.
  * Includes advanced data structures: Sparse Matrix for access pattern tracking.
@@ -561,10 +565,18 @@ public class PasswordManager {
      * @brief Entry node for hash table bucket.
      */
     private static class Entry<K, V> {
+      /** @brief The key of this entry */
       final K key;
+      /** @brief The value associated with the key */
       V value;
+      /** @brief Reference to the next entry in the chain */
       Entry<K, V> next;
 
+      /**
+       * @brief Constructs an entry with given key and value.
+       * @param key The key
+       * @param value The value
+       */
       Entry(K key, V value) {
         this.key = key;
         this.value = value;
@@ -572,11 +584,17 @@ public class PasswordManager {
       }
     }
 
+    /** @brief Array of buckets for the hash table */
     private Entry<K, V>[] buckets;
+    /** @brief Current number of entries in the hash table */
     private int size;
+    /** @brief Current capacity of the hash table */
     private int capacity;
+    /** @brief Default initial capacity */
     private static final int DEFAULT_CAPACITY = 16;
+    /** @brief Load factor threshold for resizing */
     private static final double LOAD_FACTOR_THRESHOLD = 0.75;
+    /** @brief Count of collisions that have occurred */
     private int collisionCount;
 
     /**
@@ -847,18 +865,33 @@ public class PasswordManager {
    * @brief Service usage data for sorting.
    */
   private static class ServiceUsage implements Comparable<ServiceUsage> {
+    /** @brief The service name */
     private final String service;
+    /** @brief The usage count for this service */
     private final int usageCount;
 
+    /**
+     * @brief Constructs a ServiceUsage object.
+     * @param service The service name
+     * @param usageCount The usage count
+     */
     public ServiceUsage(String service, int usageCount) {
       this.service = service;
       this.usageCount = usageCount;
     }
 
+    /**
+     * @brief Gets the service name.
+     * @return The service name
+     */
     public String getService() {
       return service;
     }
 
+    /**
+     * @brief Gets the usage count.
+     * @return The usage count
+     */
     public int getUsageCount() {
       return usageCount;
     }
@@ -1067,16 +1100,24 @@ public class PasswordManager {
      * @brief Node for stack implementation.
      */
     private static class Node {
+      /** @brief The command stored in this node */
       Command command;
+      /** @brief Reference to the next node */
       Node next;
 
+      /**
+       * @brief Constructs a node with the given command.
+       * @param command The command to store
+       */
       Node(Command command) {
         this.command = command;
         this.next = null;
       }
     }
 
+    /** @brief Reference to the top of the stack */
     private Node top;
+    /** @brief Current number of elements in the stack */
     private int size;
 
     /**
@@ -1499,17 +1540,26 @@ public class PasswordManager {
      * @brief Node class for queue elements.
      */
     private static class Node {
+      /** @brief The operation stored in this node */
       String operation;
+      /** @brief Reference to the next node */
       Node next;
 
+      /**
+       * @brief Constructs a node with the given operation.
+       * @param operation The operation to store
+       */
       Node(String operation) {
         this.operation = operation;
         this.next = null;
       }
     }
 
-    private Node front;  // Front of queue (dequeue from here)
-    private Node rear;   // Rear of queue (enqueue to here)
+    /** @brief Front of queue (dequeue from here) */
+    private Node front;
+    /** @brief Rear of queue (enqueue to here) */
+    private Node rear;
+    /** @brief Current number of elements in the queue */
     private int size;
 
     /**

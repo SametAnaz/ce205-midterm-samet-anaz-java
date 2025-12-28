@@ -7,6 +7,8 @@ import java.util.List;
  * @file Password.java
  * @class Password
  * @brief Represents a stored password entry for a specific service.
+ * @author Password Manager Team
+ * @version 1.0
  *
  * This class provides a structure to store and manage credentials such as
  * service name, username, and password. You can retrieve or update these
