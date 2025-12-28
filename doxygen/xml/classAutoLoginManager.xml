@@ -6,7 +6,11 @@
 <para>Manages auto-login functionality for the password manager. </para>
     </briefdescription>
     <detaileddescription>
-<para>This class manages auto-login settings for different services and provides methods to enable or disable auto-login functionality for specific accounts. </para>
+<para><simplesect kind="author"><para>Password Manager Team </para>
+</simplesect>
+<simplesect kind="version"><para>1.0</para>
+</simplesect>
+This class manages auto-login settings for different services and provides methods to enable or disable auto-login functionality for specific accounts. </para>
     </detaileddescription>
     <location file="password-app/src/main/java/com/ucoruh/password/AutoLoginManager.java" line="3" column="1"/>
     <listofallmembers>

@@ -3,40 +3,41 @@
 \mbox{\hyperlink{PlatformManager_8java}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00001}00001\ }
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00009}00009\ \textcolor{keyword}{package\ }com.ucoruh.password;}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.Arrays;}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.util.List;}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00019}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager}{PlatformManager}}\ \{}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ List<String>\ SUPPORTED\_PLATFORMS\ =\ }
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ Arrays.asList(\textcolor{stringliteral}{"{}Windows"{}},\ \textcolor{stringliteral}{"{}macOS"{}},\ \textcolor{stringliteral}{"{}Linux"{}},\ \textcolor{stringliteral}{"{}Android"{}},\ \textcolor{stringliteral}{"{}iOS"{}});}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00033}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a0ed6dd9a7435c3135c0d0b2a4608d7bf}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a0ed6dd9a7435c3135c0d0b2a4608d7bf}{showPlatforms}}()\ \{}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Supported\ platforms:\ "{}}\ +\ String.join(\textcolor{stringliteral}{"{},\ "{}},\ SUPPORTED\_PLATFORMS));}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00035}00035\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00036}00036\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00043}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a6e6350f24ed1f5719cad6bf56c21dc2b}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a6e6350f24ed1f5719cad6bf56c21dc2b}{isPlatformSupported}}(String\ platform)\ \{}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SUPPORTED\_PLATFORMS.contains(platform);}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00045}00045\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00046}00046\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00052}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a8bb541fd4ab8f6c5a452c267c8f8f593}{00052}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a8bb541fd4ab8f6c5a452c267c8f8f593}{getCurrentPlatform}}()\ \{}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ String\ osName\ =\ System.getProperty(\textcolor{stringliteral}{"{}os.name"{}});}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (osName.toLowerCase().contains(\textcolor{stringliteral}{"{}windows"{}}))\ \{}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Windows"{}};}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (osName.toLowerCase().contains(\textcolor{stringliteral}{"{}mac"{}}))\ \{}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}macOS"{}};}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (osName.toLowerCase().contains(\textcolor{stringliteral}{"{}linux"{}}))\ \{}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Linux"{}};}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unknown"{}};}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00063}00063\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00064}00064\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00070}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a14d820240abaff82f49163fef6c675cb}{00070}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a14d820240abaff82f49163fef6c675cb}{getNumberOfSupportedPlatforms}}()\ \{}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SUPPORTED\_PLATFORMS.size();}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00072}00072\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00011}00011\ \textcolor{keyword}{package\ }com.ucoruh.password;}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00013}00013\ \textcolor{keyword}{import}\ java.util.Arrays;}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00014}00014\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00020}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager}{00020}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager}{PlatformManager}}\ \{}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00026}00026\ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ List<String>\ SUPPORTED\_PLATFORMS\ =}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00027}00027\ \ \ \ \ Arrays.asList(\textcolor{stringliteral}{"{}Windows"{}},\ \textcolor{stringliteral}{"{}macOS"{}},\ \textcolor{stringliteral}{"{}Linux"{}},\ \textcolor{stringliteral}{"{}Android"{}},\ \textcolor{stringliteral}{"{}iOS"{}});}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00035}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a0ed6dd9a7435c3135c0d0b2a4608d7bf}{00035}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a0ed6dd9a7435c3135c0d0b2a4608d7bf}{showPlatforms}}()\ \{}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00036}00036\ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Supported\ platforms:\ "{}}\ +\ String.join(\textcolor{stringliteral}{"{},\ "{}},\ SUPPORTED\_PLATFORMS));}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00037}00037\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00045}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a6e6350f24ed1f5719cad6bf56c21dc2b}{00045}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a6e6350f24ed1f5719cad6bf56c21dc2b}{isPlatformSupported}}(String\ platform)\ \{}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{return}\ SUPPORTED\_PLATFORMS.contains(platform);}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00047}00047\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00054}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a8bb541fd4ab8f6c5a452c267c8f8f593}{00054}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a8bb541fd4ab8f6c5a452c267c8f8f593}{getCurrentPlatform}}()\ \{}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00055}00055\ \ \ \ \ String\ osName\ =\ System.getProperty(\textcolor{stringliteral}{"{}os.name"{}});}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (osName.toLowerCase().contains(\textcolor{stringliteral}{"{}windows"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00058}00058\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Windows"{}};}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00059}00059\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (osName.toLowerCase().contains(\textcolor{stringliteral}{"{}mac"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00060}00060\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}macOS"{}};}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00061}00061\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (osName.toLowerCase().contains(\textcolor{stringliteral}{"{}linux"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Linux"{}};}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00063}00063\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00064}00064\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unknown"{}};}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00066}00066\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00073}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a14d820240abaff82f49163fef6c675cb}{00073}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1PlatformManager_a14d820240abaff82f49163fef6c675cb}{getNumberOfSupportedPlatforms}}()\ \{}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ SUPPORTED\_PLATFORMS.size();}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00075}00075\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlatformManager_8java_source_l00076}00076\ \}}
 
 \end{DoxyCode}

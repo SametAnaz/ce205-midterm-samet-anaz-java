@@ -12,140 +12,149 @@
 \DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.io.IOException;}
 \DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.Scanner;}
 \DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00017}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}\ instance;}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{private}\ String\ masterPassword;\ \ \textcolor{comment}{//\ Stores\ master\ password}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00032}00032\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ String\ MASTER\_PASSWORD\_FILE\ =\ \textcolor{stringliteral}{"{}master-\/password.txt"{}};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}()\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ loadMasterPassword();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00044}00044\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00050}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a57d8f4ee816f0b15170bbaa11af24a78}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a57d8f4ee816f0b15170bbaa11af24a78}{getInstance}}()\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (instance\ ==\ \textcolor{keyword}{null})\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ instance\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00055}00055\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00056}00056\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00063}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a284077a94ff867d2aceef13ea6d5c7f7}{00063}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a284077a94ff867d2aceef13ea6d5c7f7}{resetInstance}}()\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ instance\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00065}00065\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00066}00066\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ loadMasterPassword()\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ File\ file\ =\ \textcolor{keyword}{new}\ File(MASTER\_PASSWORD\_FILE);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (file.exists())\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (BufferedReader\ reader\ =\ \textcolor{keyword}{new}\ BufferedReader(\textcolor{keyword}{new}\ FileReader(file)))\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ masterPassword\ =\ reader.readLine();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IOException\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ loading\ master\ password:\ "{}}\ +\ e.getMessage());}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00079}00079\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00080}00080\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ saveMasterPassword()\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (BufferedWriter\ writer\ =\ \textcolor{keyword}{new}\ BufferedWriter(\textcolor{keyword}{new}\ FileWriter(MASTER\_PASSWORD\_FILE)))\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ writer.write(masterPassword);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IOException\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ saving\ master\ password:\ "{}}\ +\ e.getMessage());}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00090}00090\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00091}00091\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00096}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a0ac402a736634c3b63c88772f0758bb2}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a0ac402a736634c3b63c88772f0758bb2}{isMasterPasswordSet}}()\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ masterPassword\ !=\ \textcolor{keyword}{null}\ \&\&\ !masterPassword.isEmpty();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00098}00098\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00099}00099\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00104}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_aee4b1dc5254ca5318ddbae1fb1423c4d}{00104}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_aee4b1dc5254ca5318ddbae1fb1423c4d}{createMasterPassword}}(Scanner\ scanner)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ String\ input\ =\ scanner.nextLine();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ masterPassword\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(input);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ saveMasterPassword();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Master\ password\ set\ successfully."{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00109}00109\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00110}00110\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00116}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a9c2c297da2f557714394b4b48467cec0}{00116}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a9c2c297da2f557714394b4b48467cec0}{login}}(Scanner\ scanner)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ String\ input\ =\ scanner.nextLine();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ String\ hashedInput\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(input);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ success\ =\ masterPassword.equals(hashedInput);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (success)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ the\ plaintext\ password\ for\ encryption/decryption\ operations}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ masterPassword\ =\ input;}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ success;}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00127}00127\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00128}00128\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00133}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ad670e15b89405a182394e55eaaea0013}{00133}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ad670e15b89405a182394e55eaaea0013}{getMasterPassword}}()\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ masterPassword;}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00135}00135\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00136}00136\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00142}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ae2d61ceaddd1b67995ec3778ee0c4610}{00142}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ae2d61ceaddd1b67995ec3778ee0c4610}{changeMasterPassword}}(Scanner\ scanner)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ current\ master\ password:\ "{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ String\ currentPassword\ =\ scanner.nextLine();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ String\ hashedCurrent\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(currentPassword);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ the\ current\ password\ before\ allowing\ a\ change}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!masterPassword.equals(hashedCurrent)\ \&\&\ !masterPassword.equals(currentPassword))\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Incorrect\ current\ password."{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ new\ master\ password:\ "{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ String\ newPassword\ =\ scanner.nextLine();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Confirm\ new\ master\ password:\ "{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ String\ confirmPassword\ =\ scanner.nextLine();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!newPassword.equals(confirmPassword))\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Passwords\ do\ not\ match."{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ masterPassword\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(newPassword);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ saveMasterPassword();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Master\ password\ changed\ successfully."{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00021}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{00021}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00028}00028\ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}\ instance;}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00035}00035\ \ \ \textcolor{keyword}{private}\ String\ masterPassword;\ \ \textcolor{comment}{//\ Stores\ master\ password}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00040}00040\ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ String\ MASTER\_PASSWORD\_FILE\ =\ \textcolor{stringliteral}{"{}master-\/password.txt"{}};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00046}00046\ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}()\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00047}00047\ \ \ \ \ loadMasterPassword();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00048}00048\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00054}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a57d8f4ee816f0b15170bbaa11af24a78}{00054}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a57d8f4ee816f0b15170bbaa11af24a78}{getInstance}}()\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (instance\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00056}00056\ \ \ \ \ \ \ instance\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager}{AuthManager}}();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00060}00060\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00068}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a284077a94ff867d2aceef13ea6d5c7f7}{00068}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a284077a94ff867d2aceef13ea6d5c7f7}{resetInstance}}()\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00069}00069\ \ \ \ \ instance\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00070}00070\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00075}00075\ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ loadMasterPassword()\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00076}00076\ \ \ \ \ File\ file\ =\ \textcolor{keyword}{new}\ File(MASTER\_PASSWORD\_FILE);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{if}\ (file.exists())\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00079}00079\ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (BufferedReader\ reader\ =\ \textcolor{keyword}{new}\ BufferedReader(\textcolor{keyword}{new}\ FileReader(file)))\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ masterPassword\ =\ reader.readLine();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00081}00081\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IOException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ loading\ master\ password:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00083}00083\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00085}00085\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00090}00090\ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ saveMasterPassword()\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{try}\ (BufferedWriter\ writer\ =\ \textcolor{keyword}{new}\ BufferedWriter(\textcolor{keyword}{new}\ FileWriter(MASTER\_PASSWORD\_FILE)))\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00092}00092\ \ \ \ \ \ \ writer.write(masterPassword);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00093}00093\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IOException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00094}00094\ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ saving\ master\ password:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00096}00096\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00102}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a0ac402a736634c3b63c88772f0758bb2}{00102}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a0ac402a736634c3b63c88772f0758bb2}{isMasterPasswordSet}}()\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{return}\ masterPassword\ !=\ \textcolor{keyword}{null}\ \&\&\ !masterPassword.isEmpty();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00104}00104\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00110}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_aee4b1dc5254ca5318ddbae1fb1423c4d}{00110}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_aee4b1dc5254ca5318ddbae1fb1423c4d}{createMasterPassword}}(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00111}00111\ \ \ \ \ String\ input\ =\ scanner.nextLine();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00112}00112\ \ \ \ \ masterPassword\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(input);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00113}00113\ \ \ \ \ saveMasterPassword();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00114}00114\ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Master\ password\ set\ successfully."{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00115}00115\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00122}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a9c2c297da2f557714394b4b48467cec0}{00122}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a9c2c297da2f557714394b4b48467cec0}{login}}(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00123}00123\ \ \ \ \ String\ input\ =\ scanner.nextLine();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00124}00124\ \ \ \ \ String\ hashedInput\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(input);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{boolean}\ success\ =\ masterPassword.equals(hashedInput);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{if}\ (success)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00128}00128\ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ the\ plaintext\ password\ for\ encryption/decryption\ operations}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00129}00129\ \ \ \ \ \ \ masterPassword\ =\ input;}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ success;}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00133}00133\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00139}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ad670e15b89405a182394e55eaaea0013}{00139}}\ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ad670e15b89405a182394e55eaaea0013}{getMasterPassword}}()\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{return}\ masterPassword;}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00141}00141\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00148}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ae2d61ceaddd1b67995ec3778ee0c4610}{00148}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ae2d61ceaddd1b67995ec3778ee0c4610}{changeMasterPassword}}(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00149}00149\ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ current\ master\ password:\ "{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00150}00150\ \ \ \ \ String\ currentPassword\ =\ scanner.nextLine();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00151}00151\ \ \ \ \ String\ hashedCurrent\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(currentPassword);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00153}00153\ \ \ \ \ \textcolor{comment}{//\ Verify\ the\ current\ password\ before\ allowing\ a\ change}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00154}00154\ \ \ \ \ \textcolor{keywordflow}{if}\ (!masterPassword.equals(hashedCurrent)\ \&\&\ !masterPassword.equals(currentPassword))\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00155}00155\ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Incorrect\ current\ password."{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00156}00156\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00159}00159\ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ new\ master\ password:\ "{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00160}00160\ \ \ \ \ String\ newPassword\ =\ scanner.nextLine();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00161}00161\ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Confirm\ new\ master\ password:\ "{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00162}00162\ \ \ \ \ String\ confirmPassword\ =\ scanner.nextLine();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{if}\ (!newPassword.equals(confirmPassword))\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00165}00165\ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Passwords\ do\ not\ match."{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00166}00166\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00167}00167\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00168}00168\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00173}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a7c27efe3ab593db7714bcd9c64b75986}{00173}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a7c27efe3ab593db7714bcd9c64b75986}{userMenu}}(Scanner\ scanner)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ back\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!back)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}\(\backslash\)n====\ USER\ AUTHENTICATION\ MENU\ ===="{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}1.\ Change\ Master\ Password"{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}2.\ Test\ Authentication"{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Your\ choice:\ "{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ String\ input\ =\ scanner.nextLine();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ choice\ =\ Integer.parseInt(input);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (choice)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ae2d61ceaddd1b67995ec3778ee0c4610}{changeMasterPassword}}(scanner);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ master\ password\ to\ verify:\ "{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ testPassword\ =\ scanner.nextLine();}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ hashedTest\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(testPassword);}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (masterPassword.equals(hashedTest)\ ||\ masterPassword.equals(testPassword))\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Authentication\ successful."{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Authentication\ failed."{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ back\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ choice."{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (NumberFormatException\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ number."{}});}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00209}00209\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00210}00210\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00169}00169\ \ \ \ \ masterPassword\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(newPassword);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00170}00170\ \ \ \ \ saveMasterPassword();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00171}00171\ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Master\ password\ changed\ successfully."{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00172}00172\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00173}00173\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00179}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a7c27efe3ab593db7714bcd9c64b75986}{00179}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_a7c27efe3ab593db7714bcd9c64b75986}{userMenu}}(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00180}00180\ \ \ \ \ \textcolor{keywordtype}{boolean}\ back\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00182}00182\ \ \ \ \ \textcolor{keywordflow}{while}\ (!back)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00183}00183\ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}\(\backslash\)n====\ USER\ AUTHENTICATION\ MENU\ ===="{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00184}00184\ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}1.\ Change\ Master\ Password"{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00185}00185\ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}2.\ Test\ Authentication"{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00186}00186\ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00187}00187\ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Your\ choice:\ "{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00188}00188\ \ \ \ \ \ \ String\ input\ =\ scanner.nextLine();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00190}00190\ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ choice\ =\ Integer.parseInt(input);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (choice)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1AuthManager_ae2d61ceaddd1b67995ec3778ee0c4610}{changeMasterPassword}}(scanner);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ master\ password\ to\ verify:\ "{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ String\ testPassword\ =\ scanner.nextLine();}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ String\ hashedTest\ =\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}.\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(testPassword);}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (masterPassword.equals(hashedTest)\ ||\ masterPassword.equals(testPassword))\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Authentication\ successful."{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Authentication\ failed."{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ back\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ choice."{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00218}00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00219}00219\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (NumberFormatException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00220}00220\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ number."{}});}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00221}00221\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00222}00222\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00223}00223\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthManager_8java_source_l00224}00224\ \}}
 
 \end{DoxyCode}

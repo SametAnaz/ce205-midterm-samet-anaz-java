@@ -2,6 +2,8 @@
  * @file PlatformManager.java
  * @class PlatformManager
  * @brief Class for Multi-Platform Compatibility management.
+ * @author Password Manager Team
+ * @version 1.0
  *
  * This class provides functionality to manage and display platform-specific features
  * and compatibility information.
@@ -13,62 +15,63 @@ import java.util.List;
 
 /**
  * @brief Class for Multi-Platform Compatibility.
- *
- * This class provides methods for platform detection and compatibility information.
+ * @details This class provides methods for platform detection and compatibility information.
  */
-<span class="fc" id="L19">public class PlatformManager {</span>
+<span class="fc" id="L20">public class PlatformManager {</span>
 
-    /**
-     * List of supported platforms
-     */
-<span class="fc" id="L24">    private static final List&lt;String&gt; SUPPORTED_PLATFORMS = </span>
-<span class="fc" id="L25">        Arrays.asList(&quot;Windows&quot;, &quot;macOS&quot;, &quot;Linux&quot;, &quot;Android&quot;, &quot;iOS&quot;);</span>
+  /**
+   * @brief List of supported platforms.
+   * @details Contains Windows, macOS, Linux, Android, and iOS.
+   */
+<span class="fc" id="L26">  private static final List&lt;String&gt; SUPPORTED_PLATFORMS =</span>
+<span class="fc" id="L27">    Arrays.asList(&quot;Windows&quot;, &quot;macOS&quot;, &quot;Linux&quot;, &quot;Android&quot;, &quot;iOS&quot;);</span>
 
-    /**
-     * @brief Displays supported platforms.
-     *
-     * This method prints a list of supported platforms including Windows, macOS, Linux,
-     * Android, and iOS to the standard output.
-     */
-    public static void showPlatforms() {
-<span class="fc" id="L34">        System.out.println(&quot;Supported platforms: &quot; + String.join(&quot;, &quot;, SUPPORTED_PLATFORMS));</span>
-<span class="fc" id="L35">    }</span>
-    
-    /**
-     * @brief Checks if a specific platform is supported.
-     *
-     * @param platform The platform name to check
-     * @return true if the platform is supported, false otherwise
-     */
-    public static boolean isPlatformSupported(String platform) {
-<span class="fc" id="L44">        return SUPPORTED_PLATFORMS.contains(platform);</span>
+  /**
+   * @brief Displays supported platforms.
+   *
+   * This method prints a list of supported platforms including Windows, macOS, Linux,
+   * Android, and iOS to the standard output.
+   */
+  public static void showPlatforms() {
+<span class="fc" id="L36">    System.out.println(&quot;Supported platforms: &quot; + String.join(&quot;, &quot;, SUPPORTED_PLATFORMS));</span>
+<span class="fc" id="L37">  }</span>
+
+  /**
+   * @brief Checks if a specific platform is supported.
+   *
+   * @param platform The platform name to check
+   * @return true if the platform is supported, false otherwise
+   */
+  public static boolean isPlatformSupported(String platform) {
+<span class="fc" id="L46">    return SUPPORTED_PLATFORMS.contains(platform);</span>
+  }
+
+  /**
+   * @brief Gets the current OS name.
+   *
+   * @return The name of the current operating system
+   */
+  public static String getCurrentPlatform() {
+<span class="fc" id="L55">    String osName = System.getProperty(&quot;os.name&quot;);</span>
+
+<span class="fc bfc" id="L57" title="All 2 branches covered.">    if (osName.toLowerCase().contains(&quot;windows&quot;)) {</span>
+<span class="fc" id="L58">      return &quot;Windows&quot;;</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">    } else if (osName.toLowerCase().contains(&quot;mac&quot;)) {</span>
+<span class="fc" id="L60">      return &quot;macOS&quot;;</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">    } else if (osName.toLowerCase().contains(&quot;linux&quot;)) {</span>
+<span class="fc" id="L62">      return &quot;Linux&quot;;</span>
+    } else {
+<span class="fc" id="L64">      return &quot;Unknown&quot;;</span>
     }
-    
-    /**
-     * @brief Gets the current OS name.
-     *
-     * @return The name of the current operating system
-     */
-    public static String getCurrentPlatform() {
-<span class="fc" id="L53">        String osName = System.getProperty(&quot;os.name&quot;);</span>
-<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (osName.toLowerCase().contains(&quot;windows&quot;)) {</span>
-<span class="fc" id="L55">            return &quot;Windows&quot;;</span>
-<span class="fc bfc" id="L56" title="All 2 branches covered.">        } else if (osName.toLowerCase().contains(&quot;mac&quot;)) {</span>
-<span class="fc" id="L57">            return &quot;macOS&quot;;</span>
-<span class="fc bfc" id="L58" title="All 2 branches covered.">        } else if (osName.toLowerCase().contains(&quot;linux&quot;)) {</span>
-<span class="fc" id="L59">            return &quot;Linux&quot;;</span>
-        } else {
-<span class="fc" id="L61">            return &quot;Unknown&quot;;</span>
-        }
-    }
-    
-    /**
-     * @brief Returns the number of supported platforms.
-     *
-     * @return The count of supported platforms
-     */
-    public static int getNumberOfSupportedPlatforms() {
-<span class="fc" id="L71">        return SUPPORTED_PLATFORMS.size();</span>
-    }
+  }
+
+  /**
+   * @brief Returns the number of supported platforms.
+   *
+   * @return The count of supported platforms
+   */
+  public static int getNumberOfSupportedPlatforms() {
+<span class="fc" id="L74">    return SUPPORTED_PLATFORMS.size();</span>
+  }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

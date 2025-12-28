@@ -6,7 +6,11 @@
 <para>Class for Multi-Platform Compatibility management. </para>
     </briefdescription>
     <detaileddescription>
-<para>This class provides functionality to manage and display platform-specific features and compatibility information. </para>
+<para><simplesect kind="author"><para>Password Manager Team </para>
+</simplesect>
+<simplesect kind="version"><para>1.0</para>
+</simplesect>
+This class provides functionality to manage and display platform-specific features and compatibility information. </para>
     </detaileddescription>
     <location file="password-app/src/main/java/com/ucoruh/password/PlatformManager.java" line="3" column="1"/>
     <listofallmembers>

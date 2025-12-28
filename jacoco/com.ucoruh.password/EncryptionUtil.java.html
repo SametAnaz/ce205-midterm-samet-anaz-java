@@ -11,99 +11,105 @@ import javax.crypto.spec.SecretKeySpec;
  * @file EncryptionUtil.java
  * @class EncryptionUtil
  * @brief Utility class for encryption and decryption operations
+ * @author Password Manager Team
+ * @version 1.0
  * @details This class provides methods to securely encrypt and decrypt sensitive information
  * like passwords using AES encryption with a key derived from the master password.
  */
-<span class="fc" id="L17">public class EncryptionUtil {</span>
-    /**
-     * @brief The encryption algorithm used (AES)
-     */
-    private static final String ALGORITHM = &quot;AES&quot;;
-    
-    /**
-     * @brief Encrypts a string using AES encryption
-     * @details Uses the master password to derive an encryption key and encrypts the data
-     * using AES encryption. The result is encoded in Base64 format.
-     *
-     * @param data The string to encrypt
-     * @param masterPassword The master password used to derive the encryption key
-     * @return String The encrypted string in Base64 encoding
-     * @throws Exception If encryption fails
-     */
-    public static String encrypt(String data, String masterPassword) throws Exception {
-<span class="fc" id="L34">        SecretKeySpec secretKey = createSecretKey(masterPassword);</span>
-<span class="fc" id="L35">        Cipher cipher = Cipher.getInstance(ALGORITHM);</span>
-<span class="fc" id="L36">        cipher.init(Cipher.ENCRYPT_MODE, secretKey);</span>
-<span class="fc" id="L37">        byte[] encryptedData = cipher.doFinal(data.getBytes(StandardCharsets.UTF_8));</span>
-<span class="fc" id="L38">        return Base64.getEncoder().encodeToString(encryptedData);</span>
+<span class="fc" id="L19">public class EncryptionUtil {</span>
+  /**
+   * @brief The encryption algorithm used (AES)
+   */
+  private static final String ALGORITHM = &quot;AES&quot;;
+
+  /**
+   * @brief Encrypts a string using AES encryption
+   * @details Uses the master password to derive an encryption key and encrypts the data
+   * using AES encryption. The result is encoded in Base64 format.
+   *
+   * @param data The string to encrypt
+   * @param masterPassword The master password used to derive the encryption key
+   * @return String The encrypted string in Base64 encoding
+   * @throws Exception If encryption fails
+   */
+  public static String encrypt(String data, String masterPassword) throws Exception {
+<span class="fc" id="L36">    SecretKeySpec secretKey = createSecretKey(masterPassword);</span>
+<span class="fc" id="L37">    Cipher cipher = Cipher.getInstance(ALGORITHM);</span>
+<span class="fc" id="L38">    cipher.init(Cipher.ENCRYPT_MODE, secretKey);</span>
+<span class="fc" id="L39">    byte[] encryptedData = cipher.doFinal(data.getBytes(StandardCharsets.UTF_8));</span>
+<span class="fc" id="L40">    return Base64.getEncoder().encodeToString(encryptedData);</span>
+  }
+
+  /**
+   * @brief Decrypts a string that was encrypted using AES encryption
+   * @details Uses the master password to derive the decryption key and decrypts
+   * the Base64 encoded encrypted data using AES decryption.
+   *
+   * @param encryptedData The encrypted string in Base64 encoding
+   * @param masterPassword The master password used to derive the decryption key
+   * @return String The decrypted string
+   * @throws Exception If decryption fails
+   */
+  public static String decrypt(String encryptedData, String masterPassword) throws Exception {
+<span class="fc" id="L54">    SecretKeySpec secretKey = createSecretKey(masterPassword);</span>
+<span class="fc" id="L55">    Cipher cipher = Cipher.getInstance(ALGORITHM);</span>
+<span class="fc" id="L56">    cipher.init(Cipher.DECRYPT_MODE, secretKey);</span>
+<span class="fc" id="L57">    byte[] decodedData = Base64.getDecoder().decode(encryptedData);</span>
+<span class="fc" id="L58">    byte[] decryptedData = cipher.doFinal(decodedData);</span>
+<span class="fc" id="L59">    return new String(decryptedData, StandardCharsets.UTF_8);</span>
+  }
+
+  /**
+   * @brief Creates a SecretKeySpec from the master password
+   * @details Hashes the master password using SHA-256 and creates an AES key
+   * using the first 16 bytes of the hash.
+   *
+   * @param masterPassword The master password to derive the key from
+   * @return SecretKeySpec The generated secret key for AES encryption
+   * @throws RuntimeException If the SHA-256 algorithm is not available
+   */
+  private static SecretKeySpec createSecretKey(String masterPassword) {
+    try {
+<span class="fc" id="L73">      byte[] key = masterPassword.getBytes(StandardCharsets.UTF_8);</span>
+<span class="fc" id="L74">      MessageDigest sha = MessageDigest.getInstance(&quot;SHA-256&quot;);</span>
+<span class="fc" id="L75">      key = sha.digest(key);</span>
+      // Use only the first 16 bytes for AES-128
+<span class="fc" id="L77">      byte[] shortKey = new byte[16];</span>
+<span class="fc" id="L78">      System.arraycopy(key, 0, shortKey, 0, 16);</span>
+<span class="fc" id="L79">      return new SecretKeySpec(shortKey, ALGORITHM);</span>
+<span class="nc" id="L80">    } catch (NoSuchAlgorithmException e) {</span>
+<span class="nc" id="L81">      throw new RuntimeException(&quot;Error creating encryption key&quot;, e);</span>
     }
-    
-    /**
-     * @brief Decrypts a string that was encrypted using AES encryption
-     * @details Uses the master password to derive the decryption key and decrypts
-     * the Base64 encoded encrypted data using AES decryption.
-     *
-     * @param encryptedData The encrypted string in Base64 encoding
-     * @param masterPassword The master password used to derive the decryption key
-     * @return String The decrypted string
-     * @throws Exception If decryption fails
-     */
-    public static String decrypt(String encryptedData, String masterPassword) throws Exception {
-<span class="fc" id="L52">        SecretKeySpec secretKey = createSecretKey(masterPassword);</span>
-<span class="fc" id="L53">        Cipher cipher = Cipher.getInstance(ALGORITHM);</span>
-<span class="fc" id="L54">        cipher.init(Cipher.DECRYPT_MODE, secretKey);</span>
-<span class="fc" id="L55">        byte[] decodedData = Base64.getDecoder().decode(encryptedData);</span>
-<span class="fc" id="L56">        byte[] decryptedData = cipher.doFinal(decodedData);</span>
-<span class="fc" id="L57">        return new String(decryptedData, StandardCharsets.UTF_8);</span>
+  }
+
+  /**
+   * @brief Hashes a string using SHA-256 algorithm
+   * @details Creates a secure hash of the input string using SHA-256 algorithm
+   * and returns it in hexadecimal format. This is useful for securely storing
+   * the master password.
+   *
+   * @param input The string to hash
+   * @return String The hashed string in hexadecimal format
+   * @throws RuntimeException If the SHA-256 algorithm is not available
+   */
+  public static String hashString(String input) {
+    try {
+<span class="fc" id="L97">      MessageDigest digest = MessageDigest.getInstance(&quot;SHA-256&quot;);</span>
+<span class="fc" id="L98">      byte[] hash = digest.digest(input.getBytes(StandardCharsets.UTF_8));</span>
+<span class="fc" id="L99">      StringBuilder hexString = new StringBuilder();</span>
+
+<span class="fc bfc" id="L101" title="All 2 branches covered.">      for (byte b : hash) {</span>
+<span class="fc" id="L102">        String hex = Integer.toHexString(0xff &amp; b);</span>
+
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (hex.length() == 1) hexString.append('0');</span>
+
+<span class="fc" id="L106">        hexString.append(hex);</span>
+      }
+
+<span class="fc" id="L109">      return hexString.toString();</span>
+<span class="nc" id="L110">    } catch (NoSuchAlgorithmException e) {</span>
+<span class="nc" id="L111">      throw new RuntimeException(&quot;Error hashing input&quot;, e);</span>
     }
-    
-    /**
-     * @brief Creates a SecretKeySpec from the master password
-     * @details Hashes the master password using SHA-256 and creates an AES key
-     * using the first 16 bytes of the hash.
-     *
-     * @param masterPassword The master password to derive the key from
-     * @return SecretKeySpec The generated secret key for AES encryption
-     * @throws RuntimeException If the SHA-256 algorithm is not available
-     */
-    private static SecretKeySpec createSecretKey(String masterPassword) {
-        try {
-<span class="fc" id="L71">            byte[] key = masterPassword.getBytes(StandardCharsets.UTF_8);</span>
-<span class="fc" id="L72">            MessageDigest sha = MessageDigest.getInstance(&quot;SHA-256&quot;);</span>
-<span class="fc" id="L73">            key = sha.digest(key);</span>
-            // Use only the first 16 bytes for AES-128
-<span class="fc" id="L75">            byte[] shortKey = new byte[16];</span>
-<span class="fc" id="L76">            System.arraycopy(key, 0, shortKey, 0, 16);</span>
-<span class="fc" id="L77">            return new SecretKeySpec(shortKey, ALGORITHM);</span>
-<span class="nc" id="L78">        } catch (NoSuchAlgorithmException e) {</span>
-<span class="nc" id="L79">            throw new RuntimeException(&quot;Error creating encryption key&quot;, e);</span>
-        }
-    }
-    
-    /**
-     * @brief Hashes a string using SHA-256 algorithm
-     * @details Creates a secure hash of the input string using SHA-256 algorithm
-     * and returns it in hexadecimal format. This is useful for securely storing
-     * the master password.
-     *
-     * @param input The string to hash
-     * @return String The hashed string in hexadecimal format
-     * @throws RuntimeException If the SHA-256 algorithm is not available
-     */
-    public static String hashString(String input) {
-        try {
-<span class="fc" id="L95">            MessageDigest digest = MessageDigest.getInstance(&quot;SHA-256&quot;);</span>
-<span class="fc" id="L96">            byte[] hash = digest.digest(input.getBytes(StandardCharsets.UTF_8));</span>
-<span class="fc" id="L97">            StringBuilder hexString = new StringBuilder();</span>
-<span class="fc bfc" id="L98" title="All 2 branches covered.">            for (byte b : hash) {</span>
-<span class="fc" id="L99">                String hex = Integer.toHexString(0xff &amp; b);</span>
-<span class="fc bfc" id="L100" title="All 2 branches covered.">                if (hex.length() == 1) hexString.append('0');</span>
-<span class="fc" id="L101">                hexString.append(hex);</span>
-            }
-<span class="fc" id="L103">            return hexString.toString();</span>
-<span class="nc" id="L104">        } catch (NoSuchAlgorithmException e) {</span>
-<span class="nc" id="L105">            throw new RuntimeException(&quot;Error hashing input&quot;, e);</span>
-        }
-    }
-} 
+  }
+}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -11,55 +11,59 @@
 \DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00007}00007\ \textcolor{keyword}{import}\ javax.crypto.Cipher;}
 \DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00008}00008\ \textcolor{keyword}{import}\ javax.crypto.spec.SecretKeySpec;}
 \DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00017}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ String\ ALGORITHM\ =\ \textcolor{stringliteral}{"{}AES"{}};}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00022}00022\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00033}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a7402d7f9242be47dbd31165c23e710e1}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a7402d7f9242be47dbd31165c23e710e1}{encrypt}}(String\ data,\ String\ masterPassword)\ \textcolor{keywordflow}{throws}\ Exception\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ SecretKeySpec\ secretKey\ =\ createSecretKey(masterPassword);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ Cipher\ cipher\ =\ Cipher.getInstance(ALGORITHM);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ cipher.init(Cipher.ENCRYPT\_MODE,\ secretKey);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ encryptedData\ =\ cipher.doFinal(data.getBytes(StandardCharsets.UTF\_8));}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Base64.getEncoder().encodeToString(encryptedData);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00039}00039\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00040}00040\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00051}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a083b6e4d26d671a4985f4d1053f8cf50}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a083b6e4d26d671a4985f4d1053f8cf50}{decrypt}}(String\ encryptedData,\ String\ masterPassword)\ \textcolor{keywordflow}{throws}\ Exception\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ SecretKeySpec\ secretKey\ =\ createSecretKey(masterPassword);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ Cipher\ cipher\ =\ Cipher.getInstance(ALGORITHM);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ cipher.init(Cipher.DECRYPT\_MODE,\ secretKey);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ decodedData\ =\ Base64.getDecoder().decode(encryptedData);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ decryptedData\ =\ cipher.doFinal(decodedData);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ String(decryptedData,\ StandardCharsets.UTF\_8);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00058}00058\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00059}00059\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ SecretKeySpec\ createSecretKey(String\ masterPassword)\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ key\ =\ masterPassword.getBytes(StandardCharsets.UTF\_8);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ MessageDigest\ sha\ =\ MessageDigest.getInstance(\textcolor{stringliteral}{"{}SHA-\/256"{}});}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ key\ =\ sha.digest(key);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ only\ the\ first\ 16\ bytes\ for\ AES-\/128}}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ shortKey\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{byte}[16];}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ System.arraycopy(key,\ 0,\ shortKey,\ 0,\ 16);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ SecretKeySpec(shortKey,\ ALGORITHM);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (NoSuchAlgorithmException\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ RuntimeException(\textcolor{stringliteral}{"{}Error\ creating\ encryption\ key"{}},\ e);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00081}00081\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00082}00082\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00093}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{00093}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(String\ input)\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ MessageDigest\ digest\ =\ MessageDigest.getInstance(\textcolor{stringliteral}{"{}SHA-\/256"{}});}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ hash\ =\ digest.digest(input.getBytes(StandardCharsets.UTF\_8));}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ StringBuilder\ hexString\ =\ \textcolor{keyword}{new}\ StringBuilder();}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{byte}\ b\ :\ hash)\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ hex\ =\ Integer.toHexString(0xff\ \&\ b);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hex.length()\ ==\ 1)\ hexString.append(\textcolor{charliteral}{'0'});}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hexString.append(hex);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hexString.toString();}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (NoSuchAlgorithmException\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ RuntimeException(\textcolor{stringliteral}{"{}Error\ hashing\ input"{}},\ e);}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00107}00107\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00108}00108\ \}\ }
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00019}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil}{EncryptionUtil}}\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00023}00023\ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ String\ ALGORITHM\ =\ \textcolor{stringliteral}{"{}AES"{}};}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00035}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a7402d7f9242be47dbd31165c23e710e1}{00035}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a7402d7f9242be47dbd31165c23e710e1}{encrypt}}(String\ data,\ String\ masterPassword)\ \textcolor{keywordflow}{throws}\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00036}00036\ \ \ \ \ SecretKeySpec\ secretKey\ =\ createSecretKey(masterPassword);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00037}00037\ \ \ \ \ Cipher\ cipher\ =\ Cipher.getInstance(ALGORITHM);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00038}00038\ \ \ \ \ cipher.init(Cipher.ENCRYPT\_MODE,\ secretKey);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{byte}[]\ encryptedData\ =\ cipher.doFinal(data.getBytes(StandardCharsets.UTF\_8));}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ Base64.getEncoder().encodeToString(encryptedData);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00041}00041\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00053}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a083b6e4d26d671a4985f4d1053f8cf50}{00053}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a083b6e4d26d671a4985f4d1053f8cf50}{decrypt}}(String\ encryptedData,\ String\ masterPassword)\ \textcolor{keywordflow}{throws}\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00054}00054\ \ \ \ \ SecretKeySpec\ secretKey\ =\ createSecretKey(masterPassword);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00055}00055\ \ \ \ \ Cipher\ cipher\ =\ Cipher.getInstance(ALGORITHM);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00056}00056\ \ \ \ \ cipher.init(Cipher.DECRYPT\_MODE,\ secretKey);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{byte}[]\ decodedData\ =\ Base64.getDecoder().decode(encryptedData);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{byte}[]\ decryptedData\ =\ cipher.doFinal(decodedData);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ String(decryptedData,\ StandardCharsets.UTF\_8);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00060}00060\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00071}00071\ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ SecretKeySpec\ createSecretKey(String\ masterPassword)\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00073}00073\ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ key\ =\ masterPassword.getBytes(StandardCharsets.UTF\_8);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00074}00074\ \ \ \ \ \ \ MessageDigest\ sha\ =\ MessageDigest.getInstance(\textcolor{stringliteral}{"{}SHA-\/256"{}});}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00075}00075\ \ \ \ \ \ \ key\ =\ sha.digest(key);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00076}00076\ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ only\ the\ first\ 16\ bytes\ for\ AES-\/128}}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00077}00077\ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ shortKey\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{byte}[16];}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00078}00078\ \ \ \ \ \ \ System.arraycopy(key,\ 0,\ shortKey,\ 0,\ 16);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00079}00079\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ SecretKeySpec(shortKey,\ ALGORITHM);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00080}00080\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (NoSuchAlgorithmException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00081}00081\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ RuntimeException(\textcolor{stringliteral}{"{}Error\ creating\ encryption\ key"{}},\ e);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00083}00083\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00095}\mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{00095}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classcom_1_1ucoruh_1_1password_1_1EncryptionUtil_a4eb23e72ff8a79a0d0fd1035075a0ee4}{hashString}}(String\ input)\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00097}00097\ \ \ \ \ \ \ MessageDigest\ digest\ =\ MessageDigest.getInstance(\textcolor{stringliteral}{"{}SHA-\/256"{}});}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00098}00098\ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ hash\ =\ digest.digest(input.getBytes(StandardCharsets.UTF\_8));}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00099}00099\ \ \ \ \ \ \ StringBuilder\ hexString\ =\ \textcolor{keyword}{new}\ StringBuilder();}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00101}00101\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{byte}\ b\ :\ hash)\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ String\ hex\ =\ Integer.toHexString(0xff\ \&\ b);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hex.length()\ ==\ 1)\ hexString.append(\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ hexString.append(hex);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00107}00107\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00109}00109\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hexString.toString();}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00110}00110\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (NoSuchAlgorithmException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00111}00111\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ RuntimeException(\textcolor{stringliteral}{"{}Error\ hashing\ input"{}},\ e);}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00113}00113\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EncryptionUtil_8java_source_l00114}00114\ \}}
 
 \end{DoxyCode}

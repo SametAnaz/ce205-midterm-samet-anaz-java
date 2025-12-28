@@ -9,204 +9,217 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
+ * @file AuthManager.java
+ * @class AuthManager
  * @brief Singleton class that manages user authentication.
+ * @author Password Manager Team
+ * @version 1.0
  *
  * This class handles the creation and verification of the master password.
  * It also provides a stub for user-specific functionality.
  */
 public class AuthManager {
-	/**
-	 * @brief Singleton instance of the AuthManager.
-	 *
-	 * This static field holds the single instance of the AuthManager 
-	 * used throughout the application to ensure consistent user authentication.
-	 */
-	private static AuthManager instance;
+  /**
+   * @brief Singleton instance of the AuthManager.
+   *
+   * This static field holds the single instance of the AuthManager
+   * used throughout the application to ensure consistent user authentication.
+   */
+  private static AuthManager instance;
 
-	/**
-	 * @brief Master password used for authentication.
-	 *
-	 * This field stores the master password that is used to authenticate the user.
-	 */
-	private String masterPassword;  // Stores master password
-	
-	/**
-	 * @brief File where the hashed master password is stored.
-	 */
-	private static final String MASTER_PASSWORD_FILE = &quot;master-password.txt&quot;;
+  /**
+   * @brief Master password used for authentication.
+   *
+   * This field stores the master password that is used to authenticate the user.
+   */
+  private String masterPassword;  // Stores master password
 
-	/**
-	 * Private constructor to enforce singleton pattern.
-	 * Attempts to load the master password from file if it exists.
-	 */
-<span class="fc" id="L42">	private AuthManager() {</span>
-<span class="fc" id="L43">		loadMasterPassword();</span>
-<span class="fc" id="L44">	}</span>
+  /**
+   * @brief File where the hashed master password is stored.
+   */
+  private static final String MASTER_PASSWORD_FILE = &quot;master-password.txt&quot;;
 
-	/**
-	 * Retrieve the singleton instance.
-	 * @return AuthManager instance.
-	 */
-	public static AuthManager getInstance() {
-<span class="fc bfc" id="L51" title="All 2 branches covered.">		if (instance == null) {</span>
-<span class="fc" id="L52">			instance = new AuthManager();</span>
-		}
-<span class="fc" id="L54">		return instance;</span>
-	}
-	
-	/**
-	 * Resets the singleton instance.
-	 * &lt;p&gt;
-	 * This method is intended for testing purposes only.
-	 * &lt;/p&gt;
-	 */
-	public static void resetInstance() {
-<span class="fc" id="L64">		instance = null;</span>
-<span class="fc" id="L65">	}</span>
-	
-	/**
-	 * Loads the master password from file.
-	 */
-	private void loadMasterPassword() {
-<span class="fc" id="L71">		File file = new File(MASTER_PASSWORD_FILE);</span>
-<span class="fc bfc" id="L72" title="All 2 branches covered.">		if (file.exists()) {</span>
-<span class="fc" id="L73">			try (BufferedReader reader = new BufferedReader(new FileReader(file))) {</span>
-<span class="fc" id="L74">				masterPassword = reader.readLine();</span>
-<span class="nc" id="L75">			} catch (IOException e) {</span>
-<span class="nc" id="L76">				System.out.println(&quot;Error loading master password: &quot; + e.getMessage());</span>
-<span class="fc" id="L77">			}</span>
-		}
-<span class="fc" id="L79">	}</span>
-	
-	/**
-	 * Saves the master password to file.
-	 */
-	private void saveMasterPassword() {
-<span class="fc" id="L85">		try (BufferedWriter writer = new BufferedWriter(new FileWriter(MASTER_PASSWORD_FILE))) {</span>
-<span class="fc" id="L86">			writer.write(masterPassword);</span>
-<span class="nc" id="L87">		} catch (IOException e) {</span>
-<span class="nc" id="L88">			System.out.println(&quot;Error saving master password: &quot; + e.getMessage());</span>
-<span class="fc" id="L89">		}</span>
-<span class="fc" id="L90">	}</span>
-	
-	/**
-	 * Check if the master password is set.
-	 * @return true if master password is set; otherwise false.
-	 */
-	public boolean isMasterPasswordSet() {
-<span class="pc bpc" id="L97" title="1 of 4 branches missed.">		return masterPassword != null &amp;&amp; !masterPassword.isEmpty();</span>
-	}
-	
-	/**
-	 * Create the master password.
-	 * @param scanner The Scanner object for user input.
-	 */
-	public void createMasterPassword(Scanner scanner) {
-<span class="fc" id="L105">		String input = scanner.nextLine();</span>
-<span class="fc" id="L106">		masterPassword = EncryptionUtil.hashString(input);</span>
-<span class="fc" id="L107">		saveMasterPassword();</span>
-<span class="fc" id="L108">		System.out.println(&quot;Master password set successfully.&quot;);</span>
-<span class="fc" id="L109">	}</span>
-	
-	/**
-	 * Perform user login.
-	 * @param scanner The Scanner object for user input.
-	 * @return true if login is successful.
-	 */
-	public boolean login(Scanner scanner) {
-<span class="fc" id="L117">		String input = scanner.nextLine();</span>
-<span class="fc" id="L118">		String hashedInput = EncryptionUtil.hashString(input);</span>
-<span class="fc" id="L119">		boolean success = masterPassword.equals(hashedInput);</span>
-		
-<span class="fc bfc" id="L121" title="All 2 branches covered.">		if (success) {</span>
-			// Store the plaintext password for encryption/decryption operations
-<span class="fc" id="L123">			masterPassword = input;</span>
-		}
-		
-<span class="fc" id="L126">		return success;</span>
-	}
-	
-	/**
-	 * Getter for the master password.
-	 * @return The master password.
-	 */
-	public String getMasterPassword() {
-<span class="fc" id="L134">		return masterPassword;</span>
-	}
-	
-	/**
-	 * Change the master password.
-	 * @param scanner The Scanner object for user input.
-	 * @return true if password change is successful.
-	 */
-	public boolean changeMasterPassword(Scanner scanner) {
-<span class="fc" id="L143">		System.out.print(&quot;Enter current master password: &quot;);</span>
-<span class="fc" id="L144">		String currentPassword = scanner.nextLine();</span>
-<span class="fc" id="L145">		String hashedCurrent = EncryptionUtil.hashString(currentPassword);</span>
-		
-		// Verify the current password before allowing a change
-<span class="fc bfc" id="L148" title="All 4 branches covered.">		if (!masterPassword.equals(hashedCurrent) &amp;&amp; !masterPassword.equals(currentPassword)) {</span>
-<span class="fc" id="L149">			System.out.println(&quot;Incorrect current password.&quot;);</span>
-<span class="fc" id="L150">			return false;</span>
-		}
-		
-<span class="fc" id="L153">		System.out.print(&quot;Enter new master password: &quot;);</span>
-<span class="fc" id="L154">		String newPassword = scanner.nextLine();</span>
-<span class="fc" id="L155">		System.out.print(&quot;Confirm new master password: &quot;);</span>
-<span class="fc" id="L156">		String confirmPassword = scanner.nextLine();</span>
-		
-<span class="fc bfc" id="L158" title="All 2 branches covered.">		if (!newPassword.equals(confirmPassword)) {</span>
-<span class="fc" id="L159">			System.out.println(&quot;Passwords do not match.&quot;);</span>
-<span class="fc" id="L160">			return false;</span>
-		}
-		
-<span class="fc" id="L163">		masterPassword = EncryptionUtil.hashString(newPassword);</span>
-<span class="fc" id="L164">		saveMasterPassword();</span>
-<span class="fc" id="L165">		System.out.println(&quot;Master password changed successfully.&quot;);</span>
-<span class="fc" id="L166">		return true;</span>
-	}
-	
-	/**
-	 * Display user-specific menu for authentication operations.
-	 * @param scanner The Scanner object for user input.
-	 */
-	public void userMenu(Scanner scanner) {
-<span class="fc" id="L174">		boolean back = false;</span>
-<span class="fc bfc" id="L175" title="All 2 branches covered.">		while (!back) {</span>
-<span class="fc" id="L176">			System.out.println(&quot;\n==== USER AUTHENTICATION MENU ====&quot;);</span>
-<span class="fc" id="L177">			System.out.println(&quot;1. Change Master Password&quot;);</span>
-<span class="fc" id="L178">			System.out.println(&quot;2. Test Authentication&quot;);</span>
-<span class="fc" id="L179">			System.out.println(&quot;0. Back to Main Menu&quot;);</span>
-<span class="fc" id="L180">			System.out.print(&quot;Your choice: &quot;);</span>
-			
-<span class="fc" id="L182">			String input = scanner.nextLine();</span>
-			try {
-<span class="fc" id="L184">				int choice = Integer.parseInt(input);</span>
-<span class="fc bfc" id="L185" title="All 4 branches covered.">				switch (choice) {</span>
-					case 1:
-<span class="fc" id="L187">						changeMasterPassword(scanner);</span>
-<span class="fc" id="L188">						break;</span>
-					case 2:
-<span class="fc" id="L190">						System.out.print(&quot;Enter master password to verify: &quot;);</span>
-<span class="fc" id="L191">						String testPassword = scanner.nextLine();</span>
-<span class="fc" id="L192">						String hashedTest = EncryptionUtil.hashString(testPassword);</span>
-<span class="fc bfc" id="L193" title="All 4 branches covered.">						if (masterPassword.equals(hashedTest) || masterPassword.equals(testPassword)) {</span>
-<span class="fc" id="L194">							System.out.println(&quot;Authentication successful.&quot;);</span>
-						} else {
-<span class="fc" id="L196">							System.out.println(&quot;Authentication failed.&quot;);</span>
-						}
-<span class="fc" id="L198">						break;</span>
-					case 0:
-<span class="fc" id="L200">						back = true;</span>
-<span class="fc" id="L201">						break;</span>
-					default:
-<span class="fc" id="L203">						System.out.println(&quot;Invalid choice.&quot;);</span>
-						break;
-				}
-<span class="fc" id="L206">			} catch (NumberFormatException e) {</span>
-<span class="fc" id="L207">				System.out.println(&quot;Invalid number.&quot;);</span>
-<span class="fc" id="L208">			}</span>
-<span class="fc" id="L209">		}</span>
-<span class="fc" id="L210">	}</span>
+  /**
+   * Private constructor to enforce singleton pattern.
+   * Attempts to load the master password from file if it exists.
+   */
+<span class="fc" id="L46">  private AuthManager() {</span>
+<span class="fc" id="L47">    loadMasterPassword();</span>
+<span class="fc" id="L48">  }</span>
+
+  /**
+   * Retrieve the singleton instance.
+   * @return AuthManager instance.
+   */
+  public static AuthManager getInstance() {
+<span class="fc bfc" id="L55" title="All 2 branches covered.">    if (instance == null) {</span>
+<span class="fc" id="L56">      instance = new AuthManager();</span>
+    }
+
+<span class="fc" id="L59">    return instance;</span>
+  }
+
+  /**
+   * Resets the singleton instance.
+   * &lt;p&gt;
+   * This method is intended for testing purposes only.
+   * &lt;/p&gt;
+   */
+  public static void resetInstance() {
+<span class="fc" id="L69">    instance = null;</span>
+<span class="fc" id="L70">  }</span>
+
+  /**
+   * Loads the master password from file.
+   */
+  private void loadMasterPassword() {
+<span class="fc" id="L76">    File file = new File(MASTER_PASSWORD_FILE);</span>
+
+<span class="fc bfc" id="L78" title="All 2 branches covered.">    if (file.exists()) {</span>
+<span class="fc" id="L79">      try (BufferedReader reader = new BufferedReader(new FileReader(file))) {</span>
+<span class="fc" id="L80">        masterPassword = reader.readLine();</span>
+<span class="nc" id="L81">      } catch (IOException e) {</span>
+<span class="nc" id="L82">        System.out.println(&quot;Error loading master password: &quot; + e.getMessage());</span>
+<span class="fc" id="L83">      }</span>
+    }
+<span class="fc" id="L85">  }</span>
+
+  /**
+   * Saves the master password to file.
+   */
+  private void saveMasterPassword() {
+<span class="fc" id="L91">    try (BufferedWriter writer = new BufferedWriter(new FileWriter(MASTER_PASSWORD_FILE))) {</span>
+<span class="fc" id="L92">      writer.write(masterPassword);</span>
+<span class="nc" id="L93">    } catch (IOException e) {</span>
+<span class="nc" id="L94">      System.out.println(&quot;Error saving master password: &quot; + e.getMessage());</span>
+<span class="fc" id="L95">    }</span>
+<span class="fc" id="L96">  }</span>
+
+  /**
+   * Check if the master password is set.
+   * @return true if master password is set; otherwise false.
+   */
+  public boolean isMasterPasswordSet() {
+<span class="pc bpc" id="L103" title="1 of 4 branches missed.">    return masterPassword != null &amp;&amp; !masterPassword.isEmpty();</span>
+  }
+
+  /**
+   * Create the master password.
+   * @param scanner The Scanner object for user input.
+   */
+  public void createMasterPassword(Scanner scanner) {
+<span class="fc" id="L111">    String input = scanner.nextLine();</span>
+<span class="fc" id="L112">    masterPassword = EncryptionUtil.hashString(input);</span>
+<span class="fc" id="L113">    saveMasterPassword();</span>
+<span class="fc" id="L114">    System.out.println(&quot;Master password set successfully.&quot;);</span>
+<span class="fc" id="L115">  }</span>
+
+  /**
+   * Perform user login.
+   * @param scanner The Scanner object for user input.
+   * @return true if login is successful.
+   */
+  public boolean login(Scanner scanner) {
+<span class="fc" id="L123">    String input = scanner.nextLine();</span>
+<span class="fc" id="L124">    String hashedInput = EncryptionUtil.hashString(input);</span>
+<span class="fc" id="L125">    boolean success = masterPassword.equals(hashedInput);</span>
+
+<span class="fc bfc" id="L127" title="All 2 branches covered.">    if (success) {</span>
+      // Store the plaintext password for encryption/decryption operations
+<span class="fc" id="L129">      masterPassword = input;</span>
+    }
+
+<span class="fc" id="L132">    return success;</span>
+  }
+
+  /**
+   * Getter for the master password.
+   * @return The master password.
+   */
+  public String getMasterPassword() {
+<span class="fc" id="L140">    return masterPassword;</span>
+  }
+
+  /**
+   * Change the master password.
+   * @param scanner The Scanner object for user input.
+   * @return true if password change is successful.
+   */
+  public boolean changeMasterPassword(Scanner scanner) {
+<span class="fc" id="L149">    System.out.print(&quot;Enter current master password: &quot;);</span>
+<span class="fc" id="L150">    String currentPassword = scanner.nextLine();</span>
+<span class="fc" id="L151">    String hashedCurrent = EncryptionUtil.hashString(currentPassword);</span>
+
+    // Verify the current password before allowing a change
+<span class="fc bfc" id="L154" title="All 4 branches covered.">    if (!masterPassword.equals(hashedCurrent) &amp;&amp; !masterPassword.equals(currentPassword)) {</span>
+<span class="fc" id="L155">      System.out.println(&quot;Incorrect current password.&quot;);</span>
+<span class="fc" id="L156">      return false;</span>
+    }
+
+<span class="fc" id="L159">    System.out.print(&quot;Enter new master password: &quot;);</span>
+<span class="fc" id="L160">    String newPassword = scanner.nextLine();</span>
+<span class="fc" id="L161">    System.out.print(&quot;Confirm new master password: &quot;);</span>
+<span class="fc" id="L162">    String confirmPassword = scanner.nextLine();</span>
+
+<span class="fc bfc" id="L164" title="All 2 branches covered.">    if (!newPassword.equals(confirmPassword)) {</span>
+<span class="fc" id="L165">      System.out.println(&quot;Passwords do not match.&quot;);</span>
+<span class="fc" id="L166">      return false;</span>
+    }
+
+<span class="fc" id="L169">    masterPassword = EncryptionUtil.hashString(newPassword);</span>
+<span class="fc" id="L170">    saveMasterPassword();</span>
+<span class="fc" id="L171">    System.out.println(&quot;Master password changed successfully.&quot;);</span>
+<span class="fc" id="L172">    return true;</span>
+  }
+
+  /**
+   * Display user-specific menu for authentication operations.
+   * @param scanner The Scanner object for user input.
+   */
+  public void userMenu(Scanner scanner) {
+<span class="fc" id="L180">    boolean back = false;</span>
+
+<span class="fc bfc" id="L182" title="All 2 branches covered.">    while (!back) {</span>
+<span class="fc" id="L183">      System.out.println(&quot;\n==== USER AUTHENTICATION MENU ====&quot;);</span>
+<span class="fc" id="L184">      System.out.println(&quot;1. Change Master Password&quot;);</span>
+<span class="fc" id="L185">      System.out.println(&quot;2. Test Authentication&quot;);</span>
+<span class="fc" id="L186">      System.out.println(&quot;0. Back to Main Menu&quot;);</span>
+<span class="fc" id="L187">      System.out.print(&quot;Your choice: &quot;);</span>
+<span class="fc" id="L188">      String input = scanner.nextLine();</span>
+
+      try {
+<span class="fc" id="L191">        int choice = Integer.parseInt(input);</span>
+
+<span class="fc bfc" id="L193" title="All 4 branches covered.">        switch (choice) {</span>
+          case 1:
+<span class="fc" id="L195">            changeMasterPassword(scanner);</span>
+<span class="fc" id="L196">            break;</span>
+
+          case 2:
+<span class="fc" id="L199">            System.out.print(&quot;Enter master password to verify: &quot;);</span>
+<span class="fc" id="L200">            String testPassword = scanner.nextLine();</span>
+<span class="fc" id="L201">            String hashedTest = EncryptionUtil.hashString(testPassword);</span>
+
+<span class="fc bfc" id="L203" title="All 4 branches covered.">            if (masterPassword.equals(hashedTest) || masterPassword.equals(testPassword)) {</span>
+<span class="fc" id="L204">              System.out.println(&quot;Authentication successful.&quot;);</span>
+            } else {
+<span class="fc" id="L206">              System.out.println(&quot;Authentication failed.&quot;);</span>
+            }
+
+<span class="fc" id="L209">            break;</span>
+
+          case 0:
+<span class="fc" id="L212">            back = true;</span>
+<span class="fc" id="L213">            break;</span>
+
+          default:
+<span class="fc" id="L216">            System.out.println(&quot;Invalid choice.&quot;);</span>
+            break;
+        }
+<span class="fc" id="L219">      } catch (NumberFormatException e) {</span>
+<span class="fc" id="L220">        System.out.println(&quot;Invalid number.&quot;);</span>
+<span class="fc" id="L221">      }</span>
+<span class="fc" id="L222">    }</span>
+<span class="fc" id="L223">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
